@@ -35,11 +35,11 @@ Weather app display the current and next some days display the weather condition
 14. entities (domain) - models (data) mapper 
 
 <p align="center">
-  <img alt="" src="\screenshot\screenshot_1.jpg" width="180"/>
-  <img alt="" src="\screenshot\screenshot_2.jpg" width="180"/>
-  <img alt="" src="\screenshot\screenshot_3.jpg" width="180"/>
-  <img alt="" src="\screenshot\screenshot_4.jpg" width="180"/>
-  <img alt="" src="\screenshot\screenshot_5.jpg" width="180"/>
-  <img alt="" src="\screenshot\screenshot_6.jpg" width="180"/>
+  <img alt="" src="/screenshot/screenshot_1.jpg" width="180"/>
+  <img alt="" src="/screenshot/screenshot_2.jpg" width="180"/>
+  <img alt="" src="/screenshot/screenshot_3.jpg" width="180"/>
+  <img alt="" src="/screenshot/screenshot_4.jpg" width="180"/>
+  <img alt="" src="/screenshot/screenshot_5.jpg" width="180"/>
+  <img alt="" src="/screenshot/screenshot_6.jpg" width="180"/>
 
 </p>
