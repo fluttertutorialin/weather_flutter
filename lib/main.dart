@@ -15,7 +15,7 @@ import 'presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'presentation/cubits/login/login_cubit.dart';
 import 'presentation/cubits/sign_up/sign_up_cubit.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
