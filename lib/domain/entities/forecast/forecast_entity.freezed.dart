@@ -1129,6 +1129,8 @@ abstract class _ForecastDayEntity extends ForecastDayEntity {
 mixin _$DayEntity {
   double? get maxTempF => throw _privateConstructorUsedError;
   double? get minTempF => throw _privateConstructorUsedError;
+  ConditionForecastEntity? get conditionForecastEntity =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DayEntityCopyWith<DayEntity> get copyWith =>
@@ -1140,7 +1142,12 @@ abstract class $DayEntityCopyWith<$Res> {
   factory $DayEntityCopyWith(DayEntity value, $Res Function(DayEntity) then) =
       _$DayEntityCopyWithImpl<$Res, DayEntity>;
   @useResult
-  $Res call({double? maxTempF, double? minTempF});
+  $Res call(
+      {double? maxTempF,
+      double? minTempF,
+      ConditionForecastEntity? conditionForecastEntity});
+
+  $ConditionForecastEntityCopyWith<$Res>? get conditionForecastEntity;
 }
 
 /// @nodoc
@@ -1158,6 +1165,7 @@ class _$DayEntityCopyWithImpl<$Res, $Val extends DayEntity>
   $Res call({
     Object? maxTempF = freezed,
     Object? minTempF = freezed,
+    Object? conditionForecastEntity = freezed,
   }) {
     return _then(_value.copyWith(
       maxTempF: freezed == maxTempF
@@ -1168,7 +1176,24 @@ class _$DayEntityCopyWithImpl<$Res, $Val extends DayEntity>
           ? _value.minTempF
           : minTempF // ignore: cast_nullable_to_non_nullable
               as double?,
+      conditionForecastEntity: freezed == conditionForecastEntity
+          ? _value.conditionForecastEntity
+          : conditionForecastEntity // ignore: cast_nullable_to_non_nullable
+              as ConditionForecastEntity?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ConditionForecastEntityCopyWith<$Res>? get conditionForecastEntity {
+    if (_value.conditionForecastEntity == null) {
+      return null;
+    }
+
+    return $ConditionForecastEntityCopyWith<$Res>(
+        _value.conditionForecastEntity!, (value) {
+      return _then(_value.copyWith(conditionForecastEntity: value) as $Val);
+    });
   }
 }
 
@@ -1180,7 +1205,13 @@ abstract class _$$DayEntityImplCopyWith<$Res>
       __$$DayEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({double? maxTempF, double? minTempF});
+  $Res call(
+      {double? maxTempF,
+      double? minTempF,
+      ConditionForecastEntity? conditionForecastEntity});
+
+  @override
+  $ConditionForecastEntityCopyWith<$Res>? get conditionForecastEntity;
 }
 
 /// @nodoc
@@ -1196,6 +1227,7 @@ class __$$DayEntityImplCopyWithImpl<$Res>
   $Res call({
     Object? maxTempF = freezed,
     Object? minTempF = freezed,
+    Object? conditionForecastEntity = freezed,
   }) {
     return _then(_$DayEntityImpl(
       maxTempF: freezed == maxTempF
@@ -1206,6 +1238,10 @@ class __$$DayEntityImplCopyWithImpl<$Res>
           ? _value.minTempF
           : minTempF // ignore: cast_nullable_to_non_nullable
               as double?,
+      conditionForecastEntity: freezed == conditionForecastEntity
+          ? _value.conditionForecastEntity
+          : conditionForecastEntity // ignore: cast_nullable_to_non_nullable
+              as ConditionForecastEntity?,
     ));
   }
 }
@@ -1213,16 +1249,20 @@ class __$$DayEntityImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$DayEntityImpl extends _DayEntity {
-  const _$DayEntityImpl({this.maxTempF, this.minTempF}) : super._();
+  const _$DayEntityImpl(
+      {this.maxTempF, this.minTempF, this.conditionForecastEntity})
+      : super._();
 
   @override
   final double? maxTempF;
   @override
   final double? minTempF;
+  @override
+  final ConditionForecastEntity? conditionForecastEntity;
 
   @override
   String toString() {
-    return 'DayEntity(maxTempF: $maxTempF, minTempF: $minTempF)';
+    return 'DayEntity(maxTempF: $maxTempF, minTempF: $minTempF, conditionForecastEntity: $conditionForecastEntity)';
   }
 
   @override
@@ -1233,11 +1273,15 @@ class _$DayEntityImpl extends _DayEntity {
             (identical(other.maxTempF, maxTempF) ||
                 other.maxTempF == maxTempF) &&
             (identical(other.minTempF, minTempF) ||
-                other.minTempF == minTempF));
+                other.minTempF == minTempF) &&
+            (identical(
+                    other.conditionForecastEntity, conditionForecastEntity) ||
+                other.conditionForecastEntity == conditionForecastEntity));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, maxTempF, minTempF);
+  int get hashCode =>
+      Object.hash(runtimeType, maxTempF, minTempF, conditionForecastEntity);
 
   @JsonKey(ignore: true)
   @override
@@ -1247,7 +1291,10 @@ class _$DayEntityImpl extends _DayEntity {
 }
 
 abstract class _DayEntity extends DayEntity {
-  const factory _DayEntity({final double? maxTempF, final double? minTempF}) =
+  const factory _DayEntity(
+          {final double? maxTempF,
+          final double? minTempF,
+          final ConditionForecastEntity? conditionForecastEntity}) =
       _$DayEntityImpl;
   const _DayEntity._() : super._();
 
@@ -1255,6 +1302,8 @@ abstract class _DayEntity extends DayEntity {
   double? get maxTempF;
   @override
   double? get minTempF;
+  @override
+  ConditionForecastEntity? get conditionForecastEntity;
   @override
   @JsonKey(ignore: true)
   _$$DayEntityImplCopyWith<_$DayEntityImpl> get copyWith =>

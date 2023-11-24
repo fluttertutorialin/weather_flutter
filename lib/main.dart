@@ -57,6 +57,8 @@ class MyApp extends StatelessWidget {
         builder: (_, child) => Builder(builder: (context) {
               return MaterialApp.router(
                   title: 'Weather',
+
+                  //LOCALIZATION
                   localizationsDelegates: const [
                     Strings.delegate,
                     GlobalMaterialLocalizations.delegate,
@@ -65,12 +67,16 @@ class MyApp extends StatelessWidget {
                   ],
                   locale: const Locale('en'),
                   supportedLocales: L10n.all,
+
+                  //DISABLE DEBUG BANNER
                   debugShowCheckedModeBanner: false,
 
+                  //THEME SET
                   themeMode: ThemeMode.light,
                   theme: createLightThemeData(),
                   darkTheme: createDarkThemeData(),
 
+                  //ROUTE DEFINE
                   routerConfig: goRouter);
             }));
   }

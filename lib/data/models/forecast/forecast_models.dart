@@ -116,6 +116,7 @@ class ForecastSubModels with _$ForecastSubModels {
       _$ForecastSubModelsFromJson(json);
 }
 
+//LIST CONVERT
 extension ForecastSubExtension on ForecastSubModels {
   ForecastSubEntity toDomain() => ForecastSubEntity(
       forecastDayListEntity:
@@ -143,9 +144,10 @@ extension ForecastDayExtension on ForecastDayModels {
 @freezed
 class DayModels with _$DayModels {
   const factory DayModels(
-          {@JsonKey(name: JsonKeyConstant.maxTempFJsonKey) double? maxTempF,
-          @JsonKey(name: JsonKeyConstant.minTempFJsonKey) double? minTempF}) =
-      _DayModels;
+      {@JsonKey(name: JsonKeyConstant.maxTempFJsonKey) double? maxTempF,
+      @JsonKey(name: JsonKeyConstant.minTempFJsonKey) double? minTempF,
+      @JsonKey(name: JsonKeyConstant.conditionJsonKey)
+      ConditionForecastModels? conditionForecastModels}) = _DayModels;
 
   const DayModels._();
 
@@ -154,5 +156,8 @@ class DayModels with _$DayModels {
 }
 
 extension DayExtension on DayModels {
-  DayEntity toDomain() => DayEntity(maxTempF: maxTempF, minTempF: minTempF);
+  DayEntity toDomain() => DayEntity(
+      maxTempF: maxTempF,
+      minTempF: minTempF,
+      conditionForecastEntity: conditionForecastModels!.toDomain());
 }

@@ -96,8 +96,7 @@ _fewDayForecastView(
                 shrinkWrap: true,
                 itemCount: forecastSubEntity!.forecastDayListEntity!.length,
                 itemBuilder: (context, index) {
-                  final ForecastDayEntity(:date, :dayEntity) =
-                      forecastSubEntity.forecastDayListEntity![index];
+                  final ForecastDayEntity(:date, :dayEntity) = forecastSubEntity.forecastDayListEntity![index];
                   final DayEntity(:maxTempF, :minTempF) = dayEntity!;
                   return Row(children: [
                     const Spacer(),
@@ -109,6 +108,12 @@ _fewDayForecastView(
                                 textAlign: TextAlign.center,
                                 style: context.titleSmallStyle)
                             : Text(date, textAlign: TextAlign.center)),
+                    const Gap(16.0),
+                    CachedNetworkImage(
+                      width: 34,
+                      height: 34,
+                      imageUrl: 'https:${dayEntity.conditionForecastEntity!.icon!}'
+                    ),
                     const Gap(16.0),
                     Row(children: [
                       const SizedBox(width: 8),

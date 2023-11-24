@@ -14,17 +14,6 @@ import '../../presentation/pages/pages.dart';
    context.goNamed('forgot-password');
 
    context.go('/setting/contactUs', extra: argument),
-
-   GoRoute(
-            name: '',
-            path: '',
-            builder: (context, state) {
-              return BlocProvider(
-                create: (_) => getIt<SpellsBloc>()..add(const SpellsEvent.fetchSpells()),
-                child: const ListingPage()
-              );
-            }
-          )
 */
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();

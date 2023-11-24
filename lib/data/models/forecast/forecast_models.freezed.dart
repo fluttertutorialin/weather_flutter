@@ -1354,6 +1354,9 @@ mixin _$DayModels {
   double? get maxTempF => throw _privateConstructorUsedError;
   @JsonKey(name: JsonKeyConstant.minTempFJsonKey)
   double? get minTempF => throw _privateConstructorUsedError;
+  @JsonKey(name: JsonKeyConstant.conditionJsonKey)
+  ConditionForecastModels? get conditionForecastModels =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1368,7 +1371,11 @@ abstract class $DayModelsCopyWith<$Res> {
   @useResult
   $Res call(
       {@JsonKey(name: JsonKeyConstant.maxTempFJsonKey) double? maxTempF,
-      @JsonKey(name: JsonKeyConstant.minTempFJsonKey) double? minTempF});
+      @JsonKey(name: JsonKeyConstant.minTempFJsonKey) double? minTempF,
+      @JsonKey(name: JsonKeyConstant.conditionJsonKey)
+      ConditionForecastModels? conditionForecastModels});
+
+  $ConditionForecastModelsCopyWith<$Res>? get conditionForecastModels;
 }
 
 /// @nodoc
@@ -1386,6 +1393,7 @@ class _$DayModelsCopyWithImpl<$Res, $Val extends DayModels>
   $Res call({
     Object? maxTempF = freezed,
     Object? minTempF = freezed,
+    Object? conditionForecastModels = freezed,
   }) {
     return _then(_value.copyWith(
       maxTempF: freezed == maxTempF
@@ -1396,7 +1404,24 @@ class _$DayModelsCopyWithImpl<$Res, $Val extends DayModels>
           ? _value.minTempF
           : minTempF // ignore: cast_nullable_to_non_nullable
               as double?,
+      conditionForecastModels: freezed == conditionForecastModels
+          ? _value.conditionForecastModels
+          : conditionForecastModels // ignore: cast_nullable_to_non_nullable
+              as ConditionForecastModels?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ConditionForecastModelsCopyWith<$Res>? get conditionForecastModels {
+    if (_value.conditionForecastModels == null) {
+      return null;
+    }
+
+    return $ConditionForecastModelsCopyWith<$Res>(
+        _value.conditionForecastModels!, (value) {
+      return _then(_value.copyWith(conditionForecastModels: value) as $Val);
+    });
   }
 }
 
@@ -1410,7 +1435,12 @@ abstract class _$$DayModelsImplCopyWith<$Res>
   @useResult
   $Res call(
       {@JsonKey(name: JsonKeyConstant.maxTempFJsonKey) double? maxTempF,
-      @JsonKey(name: JsonKeyConstant.minTempFJsonKey) double? minTempF});
+      @JsonKey(name: JsonKeyConstant.minTempFJsonKey) double? minTempF,
+      @JsonKey(name: JsonKeyConstant.conditionJsonKey)
+      ConditionForecastModels? conditionForecastModels});
+
+  @override
+  $ConditionForecastModelsCopyWith<$Res>? get conditionForecastModels;
 }
 
 /// @nodoc
@@ -1426,6 +1456,7 @@ class __$$DayModelsImplCopyWithImpl<$Res>
   $Res call({
     Object? maxTempF = freezed,
     Object? minTempF = freezed,
+    Object? conditionForecastModels = freezed,
   }) {
     return _then(_$DayModelsImpl(
       maxTempF: freezed == maxTempF
@@ -1436,6 +1467,10 @@ class __$$DayModelsImplCopyWithImpl<$Res>
           ? _value.minTempF
           : minTempF // ignore: cast_nullable_to_non_nullable
               as double?,
+      conditionForecastModels: freezed == conditionForecastModels
+          ? _value.conditionForecastModels
+          : conditionForecastModels // ignore: cast_nullable_to_non_nullable
+              as ConditionForecastModels?,
     ));
   }
 }
@@ -1445,7 +1480,9 @@ class __$$DayModelsImplCopyWithImpl<$Res>
 class _$DayModelsImpl extends _DayModels {
   const _$DayModelsImpl(
       {@JsonKey(name: JsonKeyConstant.maxTempFJsonKey) this.maxTempF,
-      @JsonKey(name: JsonKeyConstant.minTempFJsonKey) this.minTempF})
+      @JsonKey(name: JsonKeyConstant.minTempFJsonKey) this.minTempF,
+      @JsonKey(name: JsonKeyConstant.conditionJsonKey)
+      this.conditionForecastModels})
       : super._();
 
   factory _$DayModelsImpl.fromJson(Map<String, dynamic> json) =>
@@ -1457,10 +1494,13 @@ class _$DayModelsImpl extends _DayModels {
   @override
   @JsonKey(name: JsonKeyConstant.minTempFJsonKey)
   final double? minTempF;
+  @override
+  @JsonKey(name: JsonKeyConstant.conditionJsonKey)
+  final ConditionForecastModels? conditionForecastModels;
 
   @override
   String toString() {
-    return 'DayModels(maxTempF: $maxTempF, minTempF: $minTempF)';
+    return 'DayModels(maxTempF: $maxTempF, minTempF: $minTempF, conditionForecastModels: $conditionForecastModels)';
   }
 
   @override
@@ -1471,12 +1511,16 @@ class _$DayModelsImpl extends _DayModels {
             (identical(other.maxTempF, maxTempF) ||
                 other.maxTempF == maxTempF) &&
             (identical(other.minTempF, minTempF) ||
-                other.minTempF == minTempF));
+                other.minTempF == minTempF) &&
+            (identical(
+                    other.conditionForecastModels, conditionForecastModels) ||
+                other.conditionForecastModels == conditionForecastModels));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, maxTempF, minTempF);
+  int get hashCode =>
+      Object.hash(runtimeType, maxTempF, minTempF, conditionForecastModels);
 
   @JsonKey(ignore: true)
   @override
@@ -1495,8 +1539,10 @@ class _$DayModelsImpl extends _DayModels {
 abstract class _DayModels extends DayModels {
   const factory _DayModels(
       {@JsonKey(name: JsonKeyConstant.maxTempFJsonKey) final double? maxTempF,
-      @JsonKey(name: JsonKeyConstant.minTempFJsonKey)
-      final double? minTempF}) = _$DayModelsImpl;
+      @JsonKey(name: JsonKeyConstant.minTempFJsonKey) final double? minTempF,
+      @JsonKey(name: JsonKeyConstant.conditionJsonKey)
+      final ConditionForecastModels?
+          conditionForecastModels}) = _$DayModelsImpl;
   const _DayModels._() : super._();
 
   factory _DayModels.fromJson(Map<String, dynamic> json) =
@@ -1508,6 +1554,9 @@ abstract class _DayModels extends DayModels {
   @override
   @JsonKey(name: JsonKeyConstant.minTempFJsonKey)
   double? get minTempF;
+  @override
+  @JsonKey(name: JsonKeyConstant.conditionJsonKey)
+  ConditionForecastModels? get conditionForecastModels;
   @override
   @JsonKey(ignore: true)
   _$$DayModelsImplCopyWith<_$DayModelsImpl> get copyWith =>

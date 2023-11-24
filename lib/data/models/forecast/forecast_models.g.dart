@@ -123,10 +123,15 @@ _$DayModelsImpl _$$DayModelsImplFromJson(Map<String, dynamic> json) =>
     _$DayModelsImpl(
       maxTempF: (json['maxtemp_f'] as num?)?.toDouble(),
       minTempF: (json['mintemp_f'] as num?)?.toDouble(),
+      conditionForecastModels: json['condition'] == null
+          ? null
+          : ConditionForecastModels.fromJson(
+              json['condition'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$DayModelsImplToJson(_$DayModelsImpl instance) =>
     <String, dynamic>{
       'maxtemp_f': instance.maxTempF,
       'mintemp_f': instance.minTempF,
+      'condition': instance.conditionForecastModels,
     };

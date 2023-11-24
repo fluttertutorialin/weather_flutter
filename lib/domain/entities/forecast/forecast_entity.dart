@@ -72,8 +72,10 @@ class ForecastDayEntity with _$ForecastDayEntity {
 ///DAY
 @freezed
 class DayEntity with _$DayEntity {
-  const factory DayEntity({final double? maxTempF, final double? minTempF}) =
-      _DayEntity;
+  const factory DayEntity(
+      {final double? maxTempF,
+      final double? minTempF,
+      final ConditionForecastEntity? conditionForecastEntity}) = _DayEntity;
 
   const DayEntity._();
 }

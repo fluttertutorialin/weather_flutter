@@ -6,7 +6,7 @@ Weather app display the current and next some days display the weather condition
 1. Download the flutter latest version of 3.16.0. 
 
 # Plugin
-1. go_router: use to navigation
+1. go_router: use to navigation and all router define core/router
 2. dio: API calling
 3. get_it: Dependency injection (DI)
 4. freezed: Serialization
@@ -31,4 +31,15 @@ Weather app display the current and next some days display the weather condition
     https://medium.com/@kamal.lakhani56/clean-architecture-f23b7d9c6ee7
 11. Material3 support
 12. Impeller support
+13. .env: API url and key define
+14. entities (domain) - models (data) mapper 
 
+<p align="center">
+  <img alt="" src="screenshot\screenshot_1.jpg" width="180"/>
+  <img alt="" src="screenshot\screenshot_2.jpg" width="180"/>
+  <img alt="" src="screenshot\screenshot_3.jpg" width="180"/>
+  <img alt="" src="screenshot\screenshot_4.jpg" width="180"/>
+  <img alt="" src="screenshot\screenshot_5.jpg" width="180"/>
+  <img alt="" src="screenshot\screenshot_6.jpg" width="180"/>
+
+</p>
