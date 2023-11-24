@@ -14,6 +14,11 @@ class StringsEn extends Strings {
   String get rsSymbol => '₹ ';
 
   @override
+  String nDaysForecast(String days) {
+    return '$days - day forecast';
+  }
+
+  @override
   String get signUpFormTitle => 'Let\'s Get Started!';
 
   @override

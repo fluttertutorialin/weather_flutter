@@ -109,6 +109,12 @@ abstract class Strings {
   /// **'₹ '**
   String get rsSymbol;
 
+  /// No description provided for @nDaysForecast.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} - day forecast'**
+  String nDaysForecast(String days);
+
   /// No description provided for @signUpFormTitle.
   ///
   /// In en, this message translates to:

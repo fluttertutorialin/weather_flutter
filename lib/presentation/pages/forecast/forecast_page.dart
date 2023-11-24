@@ -90,13 +90,17 @@ _fewDayForecastView(
           padding: const EdgeInsets.all(16.0),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Text('5 - day forecast', style: context.titleMediumStyle),
+            Text(
+                context.l10n.nDaysForecast(
+                    '${forecastSubEntity!.forecastDayListEntity!.length}'),
+                style: context.titleMediumStyle),
             const SizedBox(height: 16),
             ListView.separated(
                 shrinkWrap: true,
-                itemCount: forecastSubEntity!.forecastDayListEntity!.length,
+                itemCount: forecastSubEntity.forecastDayListEntity!.length,
                 itemBuilder: (context, index) {
-                  final ForecastDayEntity(:date, :dayEntity) = forecastSubEntity.forecastDayListEntity![index];
+                  final ForecastDayEntity(:date, :dayEntity) =
+                      forecastSubEntity.forecastDayListEntity![index];
                   final DayEntity(:maxTempF, :minTempF) = dayEntity!;
                   return Row(children: [
                     const Spacer(),
@@ -110,10 +114,10 @@ _fewDayForecastView(
                             : Text(date, textAlign: TextAlign.center)),
                     const Gap(16.0),
                     CachedNetworkImage(
-                      width: 34,
-                      height: 34,
-                      imageUrl: 'https:${dayEntity.conditionForecastEntity!.icon!}'
-                    ),
+                        width: 34,
+                        height: 34,
+                        imageUrl:
+                            'https:${dayEntity.conditionForecastEntity!.icon!}'),
                     const Gap(16.0),
                     Row(children: [
                       const SizedBox(width: 8),

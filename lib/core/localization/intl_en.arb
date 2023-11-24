@@ -4,6 +4,15 @@
   
   "rsSymbol" : "\u20B9 ",
 
+   "nDaysForecast": "{days} - day forecast",
+    "@nDaysForecast": {
+      "placeholders": {
+        "days": {
+          "type": "String"
+        }
+      }
+    },
+
   "signUpFormTitle" : "Let's Get Started!",
   "signUpFormSubTitle" : "We just need a few details, and you'll\nbe on your way",
   
