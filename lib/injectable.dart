@@ -2,14 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'injectable.config.dart' as config;
 
 final getIt = GetIt.instance;
-
-/*
-@injectableInit
-Future<GetIt> configure() async => getIt.init();
-*/
 
 @InjectableInit(
   initializerName: r'$initGetIt',
@@ -27,7 +23,14 @@ Future<void> $initGetIt(
   final gh = GetItHelper(getIt, environment.toString());
   gh.factory<Dio>(() => Dio(BaseOptions(
       baseUrl: dotenv.env['baseUrl']!,
-      queryParameters: {'key': dotenv.env['key']})));
+      queryParameters: {'key': dotenv.env['key']}))
+    ..interceptors.add(PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: false,
+        error: true,
+        compact: true)));
 
   config.$initGetIt(getIt);
 }
