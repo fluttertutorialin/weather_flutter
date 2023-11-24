@@ -20,12 +20,19 @@ Future<void> main() async {
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
+  ///DEPENDENCY INJECTION
   configure();
+
+  //STORAGE SESSION
   await GetStorage.init();
+
+  //ENVIRONMENT
   await dotenv.load();
 
+  //API END POINT
   EndPointConstant().init();
 
+  //BLOC OBSERVER
   Bloc.observer = AppBlocObserver();
 
   runApp(MultiBlocProvider(providers: [

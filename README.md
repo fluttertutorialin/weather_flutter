@@ -29,4 +29,6 @@ Weather app display the current and next some days display the weather condition
 9. pretty_dio_logger: When call the API display the response in Run.
 10. code structure: Clean architecture
     https://medium.com/@kamal.lakhani56/clean-architecture-f23b7d9c6ee7
+11. Material3 support
+12. Impeller support
 
