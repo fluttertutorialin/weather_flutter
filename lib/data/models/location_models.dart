@@ -5,7 +5,7 @@ import '../../domain/entities/entities.dart';
 part 'location_models.freezed.dart';
 part 'location_models.g.dart';
 
-@freezed
+@Freezed(genericArgumentFactories: true, copyWith: false, equal: false)
 class LocationModels with _$LocationModels {
   const factory LocationModels(
       {@JsonKey(name: JsonKeyConstant.IdJsonKey) int? id,

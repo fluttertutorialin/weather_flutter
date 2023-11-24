@@ -14,8 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-LoginModels _$LoginModelsFromJson(Map<String, dynamic> json) {
-  return _LoginModels.fromJson(json);
+LoginModels _$LoginModelsFromJson(
+  Map<String, dynamic> json,
+) {
+  return _LoginModels.fromJson(
+    json,
+  );
 }
 
 /// @nodoc
@@ -28,101 +32,6 @@ mixin _$LoginModels {
   String? get mobile => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LoginModelsCopyWith<LoginModels> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LoginModelsCopyWith<$Res> {
-  factory $LoginModelsCopyWith(
-          LoginModels value, $Res Function(LoginModels) then) =
-      _$LoginModelsCopyWithImpl<$Res, LoginModels>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: JsonKeyConstant.userIdJsonKey) int? userId,
-      @JsonKey(name: JsonKeyConstant.userNameJsonKey) String? userName,
-      @JsonKey(name: JsonKeyConstant.mobileJsonKey) String? mobile});
-}
-
-/// @nodoc
-class _$LoginModelsCopyWithImpl<$Res, $Val extends LoginModels>
-    implements $LoginModelsCopyWith<$Res> {
-  _$LoginModelsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userId = freezed,
-    Object? userName = freezed,
-    Object? mobile = freezed,
-  }) {
-    return _then(_value.copyWith(
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userName: freezed == userName
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mobile: freezed == mobile
-          ? _value.mobile
-          : mobile // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$LoginModelsImplCopyWith<$Res>
-    implements $LoginModelsCopyWith<$Res> {
-  factory _$$LoginModelsImplCopyWith(
-          _$LoginModelsImpl value, $Res Function(_$LoginModelsImpl) then) =
-      __$$LoginModelsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: JsonKeyConstant.userIdJsonKey) int? userId,
-      @JsonKey(name: JsonKeyConstant.userNameJsonKey) String? userName,
-      @JsonKey(name: JsonKeyConstant.mobileJsonKey) String? mobile});
-}
-
-/// @nodoc
-class __$$LoginModelsImplCopyWithImpl<$Res>
-    extends _$LoginModelsCopyWithImpl<$Res, _$LoginModelsImpl>
-    implements _$$LoginModelsImplCopyWith<$Res> {
-  __$$LoginModelsImplCopyWithImpl(
-      _$LoginModelsImpl _value, $Res Function(_$LoginModelsImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userId = freezed,
-    Object? userName = freezed,
-    Object? mobile = freezed,
-  }) {
-    return _then(_$LoginModelsImpl(
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      userName: freezed == userName
-          ? _value.userName
-          : userName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mobile: freezed == mobile
-          ? _value.mobile
-          : mobile // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
@@ -134,8 +43,12 @@ class _$LoginModelsImpl extends _LoginModels {
       @JsonKey(name: JsonKeyConstant.mobileJsonKey) this.mobile})
       : super._();
 
-  factory _$LoginModelsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LoginModelsImplFromJson(json);
+  factory _$LoginModelsImpl.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$$LoginModelsImplFromJson(
+        json,
+      );
 
   @override
   @JsonKey(name: JsonKeyConstant.userIdJsonKey)
@@ -153,27 +66,6 @@ class _$LoginModelsImpl extends _LoginModels {
   }
 
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoginModelsImpl &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.userName, userName) ||
-                other.userName == userName) &&
-            (identical(other.mobile, mobile) || other.mobile == mobile));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, userId, userName, mobile);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LoginModelsImplCopyWith<_$LoginModelsImpl> get copyWith =>
-      __$$LoginModelsImplCopyWithImpl<_$LoginModelsImpl>(this, _$identity);
-
-  @override
   Map<String, dynamic> toJson() {
     return _$$LoginModelsImplToJson(
       this,
@@ -189,8 +81,9 @@ abstract class _LoginModels extends LoginModels {
       final String? mobile}) = _$LoginModelsImpl;
   const _LoginModels._() : super._();
 
-  factory _LoginModels.fromJson(Map<String, dynamic> json) =
-      _$LoginModelsImpl.fromJson;
+  factory _LoginModels.fromJson(
+    Map<String, dynamic> json,
+  ) = _$LoginModelsImpl.fromJson;
 
   @override
   @JsonKey(name: JsonKeyConstant.userIdJsonKey)
@@ -201,8 +94,4 @@ abstract class _LoginModels extends LoginModels {
   @override
   @JsonKey(name: JsonKeyConstant.mobileJsonKey)
   String? get mobile;
-  @override
-  @JsonKey(ignore: true)
-  _$$LoginModelsImplCopyWith<_$LoginModelsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }

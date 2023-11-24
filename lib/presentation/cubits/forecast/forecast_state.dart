@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
 import '../../../domain/entities/entities.dart';
 
 part 'forecast_state.freezed.dart';

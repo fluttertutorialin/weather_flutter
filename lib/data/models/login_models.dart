@@ -5,7 +5,7 @@ import '../../domain/entities/entities.dart';
 part 'login_models.freezed.dart';
 part 'login_models.g.dart';
 
-@freezed
+@Freezed(genericArgumentFactories: true, copyWith: false, equal: false)
 class LoginModels with _$LoginModels {
   const factory LoginModels({
     @JsonKey(name: JsonKeyConstant.userIdJsonKey) int? userId,

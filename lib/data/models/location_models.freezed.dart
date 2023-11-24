@@ -14,8 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-LocationModels _$LocationModelsFromJson(Map<String, dynamic> json) {
-  return _LocationModels.fromJson(json);
+LocationModels _$LocationModelsFromJson(
+  Map<String, dynamic> json,
+) {
+  return _LocationModels.fromJson(
+    json,
+  );
 }
 
 /// @nodoc
@@ -36,149 +40,6 @@ mixin _$LocationModels {
   String? get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LocationModelsCopyWith<LocationModels> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LocationModelsCopyWith<$Res> {
-  factory $LocationModelsCopyWith(
-          LocationModels value, $Res Function(LocationModels) then) =
-      _$LocationModelsCopyWithImpl<$Res, LocationModels>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: JsonKeyConstant.IdJsonKey) int? id,
-      @JsonKey(name: JsonKeyConstant.nameJsonKey) String? name,
-      @JsonKey(name: JsonKeyConstant.regionJsonKey) String? region,
-      @JsonKey(name: JsonKeyConstant.countryJsonKey) String? country,
-      @JsonKey(name: JsonKeyConstant.latJsonKey) double? lat,
-      @JsonKey(name: JsonKeyConstant.lonJsonKey) double? lon,
-      @JsonKey(name: JsonKeyConstant.urlJsonKey) String? url});
-}
-
-/// @nodoc
-class _$LocationModelsCopyWithImpl<$Res, $Val extends LocationModels>
-    implements $LocationModelsCopyWith<$Res> {
-  _$LocationModelsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? region = freezed,
-    Object? country = freezed,
-    Object? lat = freezed,
-    Object? lon = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      region: freezed == region
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String?,
-      country: freezed == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lat: freezed == lat
-          ? _value.lat
-          : lat // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lon: freezed == lon
-          ? _value.lon
-          : lon // ignore: cast_nullable_to_non_nullable
-              as double?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$LocationModelsImplCopyWith<$Res>
-    implements $LocationModelsCopyWith<$Res> {
-  factory _$$LocationModelsImplCopyWith(_$LocationModelsImpl value,
-          $Res Function(_$LocationModelsImpl) then) =
-      __$$LocationModelsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: JsonKeyConstant.IdJsonKey) int? id,
-      @JsonKey(name: JsonKeyConstant.nameJsonKey) String? name,
-      @JsonKey(name: JsonKeyConstant.regionJsonKey) String? region,
-      @JsonKey(name: JsonKeyConstant.countryJsonKey) String? country,
-      @JsonKey(name: JsonKeyConstant.latJsonKey) double? lat,
-      @JsonKey(name: JsonKeyConstant.lonJsonKey) double? lon,
-      @JsonKey(name: JsonKeyConstant.urlJsonKey) String? url});
-}
-
-/// @nodoc
-class __$$LocationModelsImplCopyWithImpl<$Res>
-    extends _$LocationModelsCopyWithImpl<$Res, _$LocationModelsImpl>
-    implements _$$LocationModelsImplCopyWith<$Res> {
-  __$$LocationModelsImplCopyWithImpl(
-      _$LocationModelsImpl _value, $Res Function(_$LocationModelsImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? region = freezed,
-    Object? country = freezed,
-    Object? lat = freezed,
-    Object? lon = freezed,
-    Object? url = freezed,
-  }) {
-    return _then(_$LocationModelsImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      region: freezed == region
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String?,
-      country: freezed == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lat: freezed == lat
-          ? _value.lat
-          : lat // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lon: freezed == lon
-          ? _value.lon
-          : lon // ignore: cast_nullable_to_non_nullable
-              as double?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
@@ -194,8 +55,12 @@ class _$LocationModelsImpl extends _LocationModels {
       @JsonKey(name: JsonKeyConstant.urlJsonKey) this.url})
       : super._();
 
-  factory _$LocationModelsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LocationModelsImplFromJson(json);
+  factory _$LocationModelsImpl.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$$LocationModelsImplFromJson(
+        json,
+      );
 
   @override
   @JsonKey(name: JsonKeyConstant.IdJsonKey)
@@ -225,32 +90,6 @@ class _$LocationModelsImpl extends _LocationModels {
   }
 
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LocationModelsImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.region, region) || other.region == region) &&
-            (identical(other.country, country) || other.country == country) &&
-            (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.lon, lon) || other.lon == lon) &&
-            (identical(other.url, url) || other.url == url));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, region, country, lat, lon, url);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LocationModelsImplCopyWith<_$LocationModelsImpl> get copyWith =>
-      __$$LocationModelsImplCopyWithImpl<_$LocationModelsImpl>(
-          this, _$identity);
-
-  @override
   Map<String, dynamic> toJson() {
     return _$$LocationModelsImplToJson(
       this,
@@ -270,8 +109,9 @@ abstract class _LocationModels extends LocationModels {
       _$LocationModelsImpl;
   const _LocationModels._() : super._();
 
-  factory _LocationModels.fromJson(Map<String, dynamic> json) =
-      _$LocationModelsImpl.fromJson;
+  factory _LocationModels.fromJson(
+    Map<String, dynamic> json,
+  ) = _$LocationModelsImpl.fromJson;
 
   @override
   @JsonKey(name: JsonKeyConstant.IdJsonKey)
@@ -294,8 +134,4 @@ abstract class _LocationModels extends LocationModels {
   @override
   @JsonKey(name: JsonKeyConstant.urlJsonKey)
   String? get url;
-  @override
-  @JsonKey(ignore: true)
-  _$$LocationModelsImplCopyWith<_$LocationModelsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }

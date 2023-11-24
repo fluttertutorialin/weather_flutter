@@ -6,7 +6,7 @@ import '../../../domain/entities/forecast/forecast_entity.dart';
 part 'forecast_models.freezed.dart';
 part 'forecast_models.g.dart';
 
-@freezed
+@Freezed(genericArgumentFactories: true, copyWith: false, equal: false)
 class ForecastModels with _$ForecastModels {
   const factory ForecastModels({
     @JsonKey(name: JsonKeyConstant.locationJsonKey)
@@ -31,7 +31,7 @@ extension ForeCastExtension on ForecastModels {
       forecastSubEntity: forecastSubModels!.toDomain());
 }
 
-@freezed
+@Freezed(genericArgumentFactories: true, copyWith: false, equal: false)
 class LocationForecastModels with _$LocationForecastModels {
   const factory LocationForecastModels({
     @JsonKey(name: JsonKeyConstant.nameJsonKey) String? name,
@@ -62,7 +62,7 @@ extension LocationForecastExtension on LocationForecastModels {
       localTime: localTime);
 }
 
-@freezed
+@Freezed(genericArgumentFactories: true, copyWith: false, equal: false)
 class CurrentForecastModels with _$CurrentForecastModels {
   const factory CurrentForecastModels(
           {@JsonKey(name: JsonKeyConstant.lastUpdateEpochJsonKey)
@@ -85,7 +85,7 @@ extension CurrentForecastExtension on CurrentForecastModels {
       conditionForecastEntity: conditionForecastModels!.toDomain());
 }
 
-@freezed
+@Freezed(genericArgumentFactories: true, copyWith: false, equal: false)
 class ConditionForecastModels with _$ConditionForecastModels {
   const factory ConditionForecastModels(
           {@JsonKey(name: JsonKeyConstant.textJsonKey) String? text,
@@ -103,7 +103,7 @@ extension ConditionForecastExtension on ConditionForecastModels {
       ConditionForecastEntity(text: text, icon: icon);
 }
 
-@freezed
+@Freezed(genericArgumentFactories: true, copyWith: false, equal: false)
 class ForecastSubModels with _$ForecastSubModels {
   const factory ForecastSubModels({
     @JsonKey(name: JsonKeyConstant.forecastDayJsonKey)
@@ -123,7 +123,7 @@ extension ForecastSubExtension on ForecastSubModels {
           forecastDayListModels?.map((value) => value.toDomain()).toList());
 }
 
-@freezed
+@Freezed(genericArgumentFactories: true, copyWith: false, equal: false)
 class ForecastDayModels with _$ForecastDayModels {
   const factory ForecastDayModels(
           {@JsonKey(name: JsonKeyConstant.dateJsonKey) String? date,
@@ -141,7 +141,7 @@ extension ForecastDayExtension on ForecastDayModels {
       ForecastDayEntity(date: date, dayEntity: dayModels!.toDomain());
 }
 
-@freezed
+@Freezed(genericArgumentFactories: true, copyWith: false, equal: false)
 class DayModels with _$DayModels {
   const factory DayModels(
       {@JsonKey(name: JsonKeyConstant.maxTempFJsonKey) double? maxTempF,
