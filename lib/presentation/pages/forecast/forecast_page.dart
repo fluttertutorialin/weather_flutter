@@ -62,6 +62,7 @@ class _ForecastState extends State<ForecastPage> {
               ]))));
 }
 
+///CURRENT FORECAST DISPLAY
 _currentForecastView(
     {required BuildContext context,
     required CurrentForecastEntity? currentForecastEntity}) {
@@ -81,6 +82,7 @@ _currentForecastView(
   ]);
 }
 
+///CURRENT AND FEW NEXT FORECAST DISPLAY
 _fewDayForecastView(
     {required BuildContext context,
     required ForecastSubEntity? forecastSubEntity}) {
@@ -132,8 +134,7 @@ _fewDayForecastView(
                   ]);
                 },
                 separatorBuilder: (context, index) => const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 8.0),
-                      child: Divider(thickness: 0.5),
-                    ))
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: Divider(thickness: 0.5)))
           ])));
 }
