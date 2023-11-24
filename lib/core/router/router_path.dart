@@ -1,8 +1,58 @@
-class RouterPath {
-  static const String login = '/login';
-  static const String signUp = 'signUp';
-  static const String forgotPassword = 'forgotPassword';
+enum RoutesName {
+  splash,
+  login,
+  forgotPassword,
+  signUp,
 
-  static const String home = '/home';
-  static const String forecast = 'forecast';
+  home,
+
+  location,
+  forecast,
+
+}
+
+extension RoutesNameHelper on RoutesName {
+  String get name {
+    switch (this) {
+      case RoutesName.splash:
+        return 'splash';
+
+      case RoutesName.login:
+        return 'login';
+
+      case RoutesName.forgotPassword:
+        return 'forgotPassword';
+
+      case RoutesName.signUp:
+        return 'signUp';
+
+      case RoutesName.home:
+        return 'home';
+
+      case RoutesName.location:
+        return 'location';
+
+      case RoutesName.forecast:
+        return 'forecast';
+    }
+  }
+
+  String get path {
+    switch (this) {
+      case RoutesName.splash:
+        return '/';
+      case RoutesName.login:
+        return '/login';
+      case RoutesName.forgotPassword:
+        return 'forgotPassword';
+      case RoutesName.signUp:
+        return 'signUp';
+      case RoutesName.home:
+        return '/home';
+      case RoutesName.location:
+        return 'location';
+      case RoutesName.forecast:
+        return 'forecast';
+    }
+  }
 }

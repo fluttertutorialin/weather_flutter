@@ -26,29 +26,29 @@ final goRouter = GoRouter(
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
-          name: 'splash',
-          path: '/',
+          name: RoutesName.splash.name,
+          path: RoutesName.splash.path,
           builder: (BuildContext context, GoRouterState state) {
             return const SplashPage();
           }),
 
       ///AUTHENTICATION
       GoRoute(
-          name: 'login',
-          path: RouterPath.login,
+          name: RoutesName.login.name,
+          path: RoutesName.login.path,
           builder: (BuildContext context, GoRouterState state) {
             return LoginPage();
           },
           routes: <RouteBase>[
             GoRoute(
-                name: 'signUp',
-                path: RouterPath.signUp,
+                name: RoutesName.signUp.name,
+                path: RoutesName.signUp.path,
                 builder: (BuildContext context, GoRouterState state) {
                   return const SignUpPage();
                 }),
             GoRoute(
-                name: 'forgotPassword',
-                path: RouterPath.forgotPassword,
+                name: RoutesName.forgotPassword.name,
+                path: RoutesName.forgotPassword.path,
                 builder: (BuildContext context, GoRouterState state) {
                   return const ForgotPasswordPage();
                 })
@@ -61,19 +61,19 @@ final goRouter = GoRouter(
           branches: [
             StatefulShellBranch(routes: [
               GoRoute(
-                  path: RouterPath.home,
+                  path: RoutesName.home.path,
                   builder: (context, state) => const HomePage(),
                   routes: [
                     GoRoute(
-                        name: 'location',
-                        path: 'location',
+                        name: RoutesName.location.name,
+                        path: RoutesName.location.path,
                         builder: (context, state) => BlocProvider(
                             create: (_) => getIt<LocationCubit>(),
                             child: const LocationPage()),
                         routes: [
                           GoRoute(
-                              name: 'forecast',
-                              path: RouterPath.forecast,
+                              name: RoutesName.forecast.name,
+                              path: RoutesName.forecast.path,
                               builder:
                                   (BuildContext context, GoRouterState state) {
                                 final LocationEntity(:id) =

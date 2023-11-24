@@ -55,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                         userId: '$userId',
                         userName: userName,
                         mobileNo: mobile);
-                    context.go(RouterPath.home);
+                    context.go(RoutesName.home.path);
                   }, loginError: (error) {
                     _mobileController.clear();
                     _passwordController.clear();
@@ -179,7 +179,7 @@ class _LoginPageState extends State<LoginPage> {
   _forgotPasswordWidget(BuildContext context) => Align(
       alignment: Alignment.topRight,
       child: InkWell(
-          onTap: () => context.goNamed(RouterPath.forgotPassword),
+          onTap: () => context.goNamed(RoutesName.forgotPassword.path),
           borderRadius: BorderRadius.circular(12),
           child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
@@ -193,7 +193,7 @@ class _LoginPageState extends State<LoginPage> {
             textAlign: TextAlign.center, style: context.labelLargeStyle),
         const Gap(5.0),
         InkWell(
-            onTap: () => context.goNamed(RouterPath.signUp),
+            onTap: () => context.goNamed(RoutesName.signUp.path),
             borderRadius: BorderRadius.circular(12),
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),

@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/extensions/extensions.dart';
+import '../../../core/router/router_path.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -30,7 +31,7 @@ class HomePage extends StatelessWidget {
                   FilledButton.tonal(
                       style: ElevatedButton.styleFrom(
                           minimumSize: const Size(double.infinity, 45)),
-                      onPressed: () => context.goNamed('location'),
+                      onPressed: () => context.goNamed(RoutesName.location.path),
                       child: const Text('Search location'))
                 ])));
   }

@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/constants/icon.dart';
 import '../../../core/constants/property.dart';
 import '../../../core/extensions/context_extension.dart';
+import '../../../core/router/router_path.dart';
 import '../../../domain/entities/location_entity.dart';
 import '../../cubits/location/location_cubits.dart';
 import '../../widgets/components/text_field_search_component.dart';
@@ -83,7 +84,7 @@ class _LocationState extends State<LocationPage> {
         elevation: 0.3,
         child: ListTile(
           onTap: () {
-            context.goNamed('forecast', extra: locationEntity);
+            context.goNamed(RoutesName.forecast.path, extra: locationEntity);
             PropertyConstant.keyboardHide();
           },
           leading: CircleAvatar(child: Text(country![0])),
