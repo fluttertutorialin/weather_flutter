@@ -79,7 +79,7 @@ _currentForecastView(
   return Column(children: [
     CachedNetworkImage(imageUrl: 'https:${conditionForecastEntity!.icon!}'),
     const Gap(10.0),
-    Text('$name $country', style: context.labelMediumStyle),
+    Text('$name, $country', style: context.labelMediumStyle),
     const Gap(5.0),
     Text(currentForecastEntity.conditionForecastEntity!.text!,
         style: context.labelLargeStyle!.copyWith(fontSize: 18)),
