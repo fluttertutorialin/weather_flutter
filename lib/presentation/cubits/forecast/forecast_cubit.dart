@@ -20,7 +20,9 @@ class ForecastCubit extends Cubit<ForecastState> {
 
   Future<void> forecastId({required int id}) async {
     changeLoading();
-    Either<Failure, ForecastEntity> response = await _getForecastRemoteUseCase(ForecastInput(id: 'id:$id', days: 5, agi: 'no', alerts: 'no'));
+
+    //FORECAST DEFAULT SET DAYS = 5, AQI = NO, ALERTS = NO
+    Either<Failure, ForecastEntity> response = await _getForecastRemoteUseCase(ForecastInput(id: 'id:$id'));
 
     emit(response.fold(
         (exception) => state.copyWith(error: exception.message),

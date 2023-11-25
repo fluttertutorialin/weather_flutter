@@ -11,9 +11,15 @@ class ForecastInput with _$ForecastInput {
   factory ForecastInput(
       {
         @JsonKey(name: JsonKeyConstant.idJsonParamKey) required String id,
-        @JsonKey(name: JsonKeyConstant.daysJsonParamKey) required int days,
-        @JsonKey(name: JsonKeyConstant.aqiJsonParamKey, defaultValue: 'no') required String agi,
-        @JsonKey(name: JsonKeyConstant.alertsJsonParamKey, defaultValue: 'no') required String alerts
+
+        @Default(5)
+        @JsonKey(name: JsonKeyConstant.daysJsonParamKey) int? days,
+
+        @Default('no')
+        @JsonKey(name: JsonKeyConstant.aqiJsonParamKey) String? agi,
+
+        @Default('no')
+        @JsonKey(name: JsonKeyConstant.alertsJsonParamKey) String? alerts
       }) = _ForecastInput;
 
   factory ForecastInput.fromJson(Map<String, dynamic> json) =>

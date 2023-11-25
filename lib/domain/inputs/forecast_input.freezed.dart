@@ -23,11 +23,11 @@ mixin _$ForecastInput {
   @JsonKey(name: JsonKeyConstant.idJsonParamKey)
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: JsonKeyConstant.daysJsonParamKey)
-  int get days => throw _privateConstructorUsedError;
-  @JsonKey(name: JsonKeyConstant.aqiJsonParamKey, defaultValue: 'no')
-  String get agi => throw _privateConstructorUsedError;
-  @JsonKey(name: JsonKeyConstant.alertsJsonParamKey, defaultValue: 'no')
-  String get alerts => throw _privateConstructorUsedError;
+  int? get days => throw _privateConstructorUsedError;
+  @JsonKey(name: JsonKeyConstant.aqiJsonParamKey)
+  String? get agi => throw _privateConstructorUsedError;
+  @JsonKey(name: JsonKeyConstant.alertsJsonParamKey)
+  String? get alerts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
@@ -38,11 +38,9 @@ mixin _$ForecastInput {
 class _$ForecastInputImpl implements _ForecastInput {
   _$ForecastInputImpl(
       {@JsonKey(name: JsonKeyConstant.idJsonParamKey) required this.id,
-      @JsonKey(name: JsonKeyConstant.daysJsonParamKey) required this.days,
-      @JsonKey(name: JsonKeyConstant.aqiJsonParamKey, defaultValue: 'no')
-      required this.agi,
-      @JsonKey(name: JsonKeyConstant.alertsJsonParamKey, defaultValue: 'no')
-      required this.alerts});
+      @JsonKey(name: JsonKeyConstant.daysJsonParamKey) this.days = 5,
+      @JsonKey(name: JsonKeyConstant.aqiJsonParamKey) this.agi = 'no',
+      @JsonKey(name: JsonKeyConstant.alertsJsonParamKey) this.alerts = 'no'});
 
   factory _$ForecastInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ForecastInputImplFromJson(json);
@@ -52,13 +50,13 @@ class _$ForecastInputImpl implements _ForecastInput {
   final String id;
   @override
   @JsonKey(name: JsonKeyConstant.daysJsonParamKey)
-  final int days;
+  final int? days;
   @override
-  @JsonKey(name: JsonKeyConstant.aqiJsonParamKey, defaultValue: 'no')
-  final String agi;
+  @JsonKey(name: JsonKeyConstant.aqiJsonParamKey)
+  final String? agi;
   @override
-  @JsonKey(name: JsonKeyConstant.alertsJsonParamKey, defaultValue: 'no')
-  final String alerts;
+  @JsonKey(name: JsonKeyConstant.alertsJsonParamKey)
+  final String? alerts;
 
   @override
   String toString() {
@@ -76,11 +74,10 @@ class _$ForecastInputImpl implements _ForecastInput {
 abstract class _ForecastInput implements ForecastInput {
   factory _ForecastInput(
       {@JsonKey(name: JsonKeyConstant.idJsonParamKey) required final String id,
-      @JsonKey(name: JsonKeyConstant.daysJsonParamKey) required final int days,
-      @JsonKey(name: JsonKeyConstant.aqiJsonParamKey, defaultValue: 'no')
-      required final String agi,
-      @JsonKey(name: JsonKeyConstant.alertsJsonParamKey, defaultValue: 'no')
-      required final String alerts}) = _$ForecastInputImpl;
+      @JsonKey(name: JsonKeyConstant.daysJsonParamKey) final int? days,
+      @JsonKey(name: JsonKeyConstant.aqiJsonParamKey) final String? agi,
+      @JsonKey(name: JsonKeyConstant.alertsJsonParamKey)
+      final String? alerts}) = _$ForecastInputImpl;
 
   factory _ForecastInput.fromJson(Map<String, dynamic> json) =
       _$ForecastInputImpl.fromJson;
@@ -90,11 +87,11 @@ abstract class _ForecastInput implements ForecastInput {
   String get id;
   @override
   @JsonKey(name: JsonKeyConstant.daysJsonParamKey)
-  int get days;
+  int? get days;
   @override
-  @JsonKey(name: JsonKeyConstant.aqiJsonParamKey, defaultValue: 'no')
-  String get agi;
+  @JsonKey(name: JsonKeyConstant.aqiJsonParamKey)
+  String? get agi;
   @override
-  @JsonKey(name: JsonKeyConstant.alertsJsonParamKey, defaultValue: 'no')
-  String get alerts;
+  @JsonKey(name: JsonKeyConstant.alertsJsonParamKey)
+  String? get alerts;
 }
