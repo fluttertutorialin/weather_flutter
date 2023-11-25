@@ -26,6 +26,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
 
   final EndPointConstant endPointConstant = EndPointConstant();
 
+  ///  FINDS A [LOCATION] USER BASED
   @override
   Future<ApiResponse<List<LocationEntity>>> location(String? params) async {
     final response = await _getLocation(params: params);
@@ -40,6 +41,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     }
   }
 
+  /// FETCHES [WEATHER] FOR A GIVEN [LOCATIONID].
   @override
   Future<ApiResponse<ForecastEntity>> forecastById(
       Map<String, dynamic>? params) async {

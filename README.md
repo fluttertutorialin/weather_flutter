@@ -35,6 +35,7 @@ Weather app display the current and next some days display the weather condition
 14. entities (domain) - models (data) mapper 
 15. Forecast Api: 
     location, current, forecast (forecastday [])
+16. Humidity %, Pressure hPa, Wind km/h
 ```
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'failures.freezed.dart';

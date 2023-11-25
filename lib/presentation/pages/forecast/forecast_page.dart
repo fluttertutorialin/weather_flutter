@@ -6,6 +6,7 @@ import 'package:gap/gap.dart';
 import '../../../core/extensions/extensions.dart';
 import '../../../domain/entities/forecast/forecast_entity.dart';
 import '../../cubits/forecast/forecast_cubits.dart';
+import '../../cubits/setting/setting_cubits.dart';
 import '../../widgets/widget/indicator_adaptive_widget.dart';
 
 class ForecastPage extends StatefulWidget {
@@ -18,6 +19,7 @@ class ForecastPage extends StatefulWidget {
 class _ForecastState extends State<ForecastPage> {
   final searchController = TextEditingController();
   late final ForecastCubit cubit;
+  bool? isFahrenheitUnit = true;
 
   @override
   void initState() {
@@ -30,36 +32,61 @@ class _ForecastState extends State<ForecastPage> {
       value: SystemUiOverlayStyle.dark
           .copyWith(statusBarColor: Colors.transparent),
       child: Scaffold(
-          appBar: AppBar(title: const Text('Weather')),
+          appBar: AppBar(title: const Text('Weather'), actions: [
+            BlocConsumer<SettingCubit, SettingState>(
+                listener: (context, state) {
+              state.whenOrNull(unit: (value) {
+                isFahrenheitUnit = value;
+              });
+            }, builder: (context, state) {
+              return Switch.adaptive(
+                  value: isFahrenheitUnit!,
+                  activeColor: context.primaryColor,
+                  onChanged: (bool value) {
+                    context
+                        .read<SettingCubit>()
+                        .unitChange(temperatureUnits: value);
+                  });
+            })
+          ]),
           body: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(children: [
-                Expanded(child: BlocBuilder<ForecastCubit, ForecastState>(
-                    builder: (context, state) {
-                  final status = (state.loading, state.forecastEntity);
+                Expanded(
+                    child: BlocSelector<SettingCubit, SettingState, bool>(
+                        selector: (state) {
+                  return state.maybeWhen(
+                    unit: (unit) => unit,
+                    orElse: () => false,
+                  );
+                }, builder: (context, unit) {
+                  return BlocBuilder<ForecastCubit, ForecastState>(
+                      builder: (context, state) {
+                    final status = (state.loading, state.forecastEntity);
 
-                  return switch (status) {
-                    (true, _) => const PlatformLoadingIndicatorWidget(),
-                    (false, _) => Align(
-                        alignment: Alignment.center,
-                        child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
+                    return switch (status) {
+                      (true, _) => const PlatformLoadingIndicatorWidget(),
+                      (false, _) => Align(
+                          alignment: Alignment.center,
+                          child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(children: [
                                 _currentForecastView(
                                     context: context,
                                     locationForecastEntity: state
                                         .forecastEntity.locationForecastEntity,
                                     currentForecastEntity: state
-                                        .forecastEntity.currentForecastEntity),
+                                        .forecastEntity.currentForecastEntity,
+                                    unit: unit),
                                 const Gap(18.0),
                                 _fewDayForecastView(
                                     context: context,
                                     forecastSubEntity:
-                                        state.forecastEntity.forecastSubEntity)
-                              ],
-                            )))
-                  };
+                                        state.forecastEntity.forecastSubEntity,
+                                    unit: unit)
+                              ])))
+                    };
+                  });
                 }))
               ]))));
 }
@@ -68,10 +95,11 @@ class _ForecastState extends State<ForecastPage> {
 _currentForecastView(
     {required BuildContext context,
     required CurrentForecastEntity? currentForecastEntity,
-    required LocationForecastEntity? locationForecastEntity}) {
-
+    required LocationForecastEntity? locationForecastEntity,
+    required bool? unit}) {
   //FORECAST
-  final CurrentForecastEntity(:conditionForecastEntity) =currentForecastEntity!;
+  final CurrentForecastEntity(:conditionForecastEntity) =
+      currentForecastEntity!;
 
   //COUNTRY
   final LocationForecastEntity(:name, :country) = locationForecastEntity!;
@@ -84,7 +112,10 @@ _currentForecastView(
     Text(currentForecastEntity.conditionForecastEntity!.text!,
         style: context.labelLargeStyle!.copyWith(fontSize: 18)),
     const Gap(5.0),
-    Text(currentForecastEntity.tempF!.fahrenheitToCelsius(),
+    Text(
+        unit!
+            ? currentForecastEntity.tempF!.fahrenheitToCelsius()
+            : currentForecastEntity.tempF!.celsiusToFahrenheit(),
         style: context.displayLargeStyle)
   ]);
 }
@@ -92,7 +123,8 @@ _currentForecastView(
 ///CURRENT AND FEW NEXT FORECAST DISPLAY
 _fewDayForecastView(
     {required BuildContext context,
-    required ForecastSubEntity? forecastSubEntity}) {
+    required ForecastSubEntity? forecastSubEntity,
+    required bool? unit}) {
   return Card(
       color: Theme.of(context).colorScheme.surfaceVariant,
       child: Padding(
@@ -130,11 +162,15 @@ _fewDayForecastView(
                     const Gap(16.0),
                     Row(children: [
                       const SizedBox(width: 8),
-                      Text(maxTempF!.fahrenheitToCelsius()),
+                      Text(unit!
+                          ? maxTempF!.fahrenheitToCelsius()
+                          : maxTempF!.celsiusToFahrenheit()),
                       const SizedBox(width: 8),
                       const Text('/'),
                       const SizedBox(width: 8),
-                      Text(minTempF!.fahrenheitToCelsius()),
+                      Text(unit
+                          ? minTempF!.fahrenheitToCelsius()
+                          : minTempF!.celsiusToFahrenheit()),
                       const SizedBox(width: 8)
                     ]),
                     const Spacer(flex: 2)
