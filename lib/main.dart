@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,6 +9,7 @@ import 'package:get_storage/get_storage.dart';
 import 'bloc_observer.dart';
 import 'core/constants/end_point.dart';
 import 'core/localization/localization.dart';
+import 'core/log/log.dart';
 import 'core/router/router.dart';
 import 'core/theme/themes.dart';
 import 'injectable.dart';
@@ -29,11 +31,16 @@ void main() async {
   //ENVIRONMENT
   await dotenv.load();
 
+  //LOG INITIALIZE
+  Log.init();
+
   //API END POINT
   EndPointConstant().init();
 
   //BLOC OBSERVER
-  Bloc.observer = AppBlocObserver();
+  if (kDebugMode) {
+    Bloc.observer = AppBlocObserver();
+  }
 
   runApp(MultiBlocProvider(providers: [
     BlocProvider(create: (_) => getIt<LoginCubit>()),

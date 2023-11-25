@@ -56,12 +56,13 @@ class _LocationState extends State<LocationPage> {
                 const Gap(12.0),
                 Expanded(child: BlocBuilder<LocationCubit, LocationState>(
                     builder: (context, state) {
-                  final status = (state.loading, state.locationList.isEmpty);
+                  final status = (state.error.isNotEmpty, state.loading, state.locationList.isEmpty);
 
                   return switch (status) {
-                    (true, _) => const PlatformLoadingIndicatorWidget(),
-                    (_, true) => const ListViewEmptyWidget(),
-                    (_, false) => ListView.builder(
+                    (true, _, _) => ListViewEmptyWidget(error: state.error),
+                    (_,true, _) => const PlatformLoadingIndicatorWidget(),
+                    (_, _, true) => const ListViewEmptyWidget(),
+                    (_, _, false) => ListView.builder(
                         addAutomaticKeepAlives: false,
                         addRepaintBoundaries: false,
                         physics: const BouncingScrollPhysics(

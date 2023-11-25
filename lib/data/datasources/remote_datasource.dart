@@ -11,8 +11,7 @@ abstract class RemoteDataSource {
   //AUTHENTICATION
   Future<ApiResponse<LoginEntity>> login(Map<String, dynamic>? params);
   Future<ApiResponse<SignUpEntity>> signUp(Map<String, dynamic>? params);
-  Future<ApiResponse<ForgotPasswordEntity>> forgotPassword(
-      Map<String, dynamic>? params);
+  Future<ApiResponse<ForgotPasswordEntity>> forgotPassword(Map<String, dynamic>? params);
 
   //WEATHER
   Future<ApiResponse<List<LocationEntity>>> location(String? params);

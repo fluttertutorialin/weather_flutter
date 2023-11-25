@@ -20,11 +20,10 @@ class LocationCubit extends Cubit<LocationState> {
   Future<void> location({required String search}) async {
     changeLoading();
 
-    Either<Failure, List<LocationEntity>> response =
-        await _getLocationRemoteUseCase(search);
+    Either<Failure, List<LocationEntity>> response = await _getLocationRemoteUseCase(search);
     changeLoading();
 
-    emit(response.fold((exception) => state.copyWith(locationList: [], error: exception.message),
+    emit(response.fold((exception) => state.copyWith(error: exception.message),
         (locationResponse) => state.copyWith(locationList: locationResponse)));
   }
 

@@ -5,7 +5,8 @@ import '../../../core/constants/constants.dart';
 import '../../../core/extensions/extensions.dart';
 
 class ListViewEmptyWidget extends StatelessWidget {
-  const ListViewEmptyWidget({super.key});
+  final String? error;
+  const ListViewEmptyWidget({super.key, this.error});
 
   @override
   Widget build(BuildContext context) => MergeSemantics(
@@ -13,7 +14,7 @@ class ListViewEmptyWidget extends StatelessWidget {
         Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Lottie.asset(AssetLottieConstant.emptyLottie),
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Text(context.l10n.noDataLabel,
+            Text(error ?? context.l10n.noDataLabel,
                 style: context.labelLargeStyle)
           ])
         ]),
