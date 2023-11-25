@@ -5,6 +5,7 @@ import '../../domain/entities/entities.dart';
 import '../../injectable.dart';
 import '../../presentation/cubits/forecast/forecast_cubit.dart';
 import '../../presentation/cubits/location/location_cubit.dart';
+import '../../presentation/cubits/setting/setting_cubit.dart';
 import 'router_path.dart';
 
 import '../../presentation/pages/pages.dart';
@@ -78,10 +79,21 @@ final goRouter = GoRouter(
                                   (BuildContext context, GoRouterState state) {
                                 final LocationEntity(:id) =
                                     state.extra as LocationEntity;
-                                return BlocProvider(
-                                    create: (_) => getIt<ForecastCubit>()
-                                      ..forecastId(id: id!),
-                                    child: const ForecastPage());
+                                return MultiBlocProvider(
+                                  providers: [
+                                    BlocProvider<ForecastCubit>(
+                                      create: (_) => getIt<ForecastCubit>()
+                                        ..forecastId(id: id!),
+                                    ),
+                                    BlocProvider<SettingCubit>(
+                                      create: (BuildContext context) =>
+                                          getIt<SettingCubit>()
+                                            ..unitChange(
+                                                temperatureUnits: true),
+                                    )
+                                  ],
+                                  child: const ForecastPage(),
+                                );
                               })
                         ])
                   ])

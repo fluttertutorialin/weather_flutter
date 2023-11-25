@@ -15,7 +15,6 @@ import 'core/theme/themes.dart';
 import 'injectable.dart';
 import 'presentation/cubits/forgot_password/forgot_password_cubit.dart';
 import 'presentation/cubits/login/login_cubit.dart';
-import 'presentation/cubits/setting/setting_cubit.dart';
 import 'presentation/cubits/sign_up/sign_up_cubit.dart';
 
 void main() async {
@@ -44,9 +43,7 @@ void main() async {
   }
 
   runApp(MultiBlocProvider(providers: [
-    BlocProvider(
-        create: (_) => getIt<SettingCubit>()
-          ..unitChange(temperatureUnits: true)),
+    //BlocProvider(create: (_) => getIt<SettingCubit>()..unitChange(temperatureUnits: true)),
     BlocProvider(create: (_) => getIt<LoginCubit>()),
     BlocProvider(create: (_) => getIt<SignUpCubit>()),
     BlocProvider(create: (_) => getIt<ForgotPasswordCubit>()),
