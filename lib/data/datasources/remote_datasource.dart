@@ -11,11 +11,11 @@ abstract class RemoteDataSource {
   //AUTHENTICATION
   Future<ApiResponse<LoginEntity>> login(Map<String, dynamic>? params);
   Future<ApiResponse<SignUpEntity>> signUp(Map<String, dynamic>? params);
-  Future<ApiResponse<ForgotPasswordEntity>> forgotPassword(Map<String, dynamic>? params);
+  Future<ApiResponse<ForgotPasswordEntity>> forgotPassword(
+      Map<String, dynamic>? params);
 
   //WEATHER
   Future<ApiResponse<List<LocationEntity>>> location(String? params);
-  Future<ApiResponse<LoginEntity>> locationSearch(Map<String, dynamic>? params);
   Future<ApiResponse<ForecastEntity>> forecastById(Map<String, dynamic>? params);
 }
 
@@ -31,27 +31,23 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   Future<ApiResponse<List<LocationEntity>>> location(String? params) async {
     final response = await _getLocation(params: params);
     if (response.statusCode == StatusCodeConstant.statusCodeOk200) {
-      return ApiResponse(data: response.data.map<LocationEntity>((data) => LocationModels.fromJson(data).toDomain()).toList());
+      return ApiResponse(
+          data: response.data
+              .map<LocationEntity>(
+                  (data) => LocationModels.fromJson(data).toDomain())
+              .toList());
     } else {
       throw ErrorException(message: response.message);
     }
   }
 
   @override
-  Future<ApiResponse<LoginEntity>> locationSearch(Map<String, dynamic>? params) async {
-    final response = await _getLocationSearch(params: params);
-    if (response.statusCode == StatusCodeConstant.statusCodeOk200) {
-      return ApiResponse(data: LoginModels.fromJson(response.data).toDomain());
-    } else {
-      throw ErrorException(message: response.message);
-    }
-  }
-
-  @override
-  Future<ApiResponse<ForecastEntity>> forecastById(Map<String, dynamic>? params) async {
+  Future<ApiResponse<ForecastEntity>> forecastById(
+      Map<String, dynamic>? params) async {
     final response = await _getForecastById(params: params);
     if (response.statusCode == StatusCodeConstant.statusCodeOk200) {
-      return ApiResponse(data: ForecastModels.fromJson(response.data).toDomain());
+      return ApiResponse(
+          data: ForecastModels.fromJson(response.data).toDomain());
     } else {
       throw ErrorException(message: response.message);
     }
@@ -61,8 +57,7 @@ class RemoteDataSourceImpl implements RemoteDataSource {
   Future<ApiResponse<LoginEntity>> login(Map<String, dynamic>? params) async {
     final response = await apiConsumer.get(url: '', params: params);
     if (response.statusCode == StatusCodeConstant.statusCodeOk200) {
-      return ApiResponse(
-          data: LoginModels.fromJson(response.data).toDomain());
+      return ApiResponse(data: LoginModels.fromJson(response.data).toDomain());
     } else {
       throw const ErrorException(message: '');
     }
@@ -91,38 +86,17 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     }
   }
 
-  Future<DioBaseResponse> _getLocation(
-      {required String? params}) async =>
+  Future<DioBaseResponse> _getLocation({required String? params}) async =>
       apiConsumer
-          .get(
-          url: endPointConstant.location,
-          params: {'q': params})
-          .then((value) => DioBaseResponse(
-          statusCode: value.statusCode,
-          message: value.message,
-          data: value.data));
+          .get(url: endPointConstant.location, params: {'q': params}).then(
+              (value) => DioBaseResponse(
+                  statusCode: value.statusCode,
+                  message: value.message,
+                  data: value.data));
 
   Future<DioBaseResponse> _getForecastById(
           {required Map<String, dynamic>? params}) async =>
-      apiConsumer
-          .get(
-              url: endPointConstant.forCastIdHistory,
-              params: {'q': 'id:1104989',
-                'days': 5,
-                'aqi': 'no',
-                'alerts': 'no'})
-          .then((value) => DioBaseResponse(
-              statusCode: value.statusCode,
-              message: value.message,
-              data: value.data));
-
-  Future<DioBaseResponse> _getLocationSearch(
-      {required Map<String, dynamic>? params}) async =>
-      apiConsumer
-          .get(
-          url: endPointConstant.locationSearch,
-          params: {'q': 'Ahmedabad'})
-          .then((value) => DioBaseResponse(
+      apiConsumer.get(url: endPointConstant.forCastIdHistory, params: params).then((value) => DioBaseResponse(
           statusCode: value.statusCode,
           message: value.message,
           data: value.data));

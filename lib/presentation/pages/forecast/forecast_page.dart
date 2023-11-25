@@ -48,8 +48,8 @@ class _ForecastState extends State<ForecastPage> {
                               children: [
                                 _currentForecastView(
                                     context: context,
-                                    currentForecastEntity: state
-                                        .forecastEntity.currentForecastEntity),
+                                    locationForecastEntity: state.forecastEntity.locationForecastEntity,
+                                    currentForecastEntity: state.forecastEntity.currentForecastEntity),
                                 const Gap(18.0),
                                 _fewDayForecastView(
                                     context: context,
@@ -65,15 +65,20 @@ class _ForecastState extends State<ForecastPage> {
 ///CURRENT FORECAST DISPLAY
 _currentForecastView(
     {required BuildContext context,
-    required CurrentForecastEntity? currentForecastEntity}) {
-  final CurrentForecastEntity(:conditionForecastEntity) =
-      currentForecastEntity!;
+    required CurrentForecastEntity? currentForecastEntity,
+    required LocationForecastEntity? locationForecastEntity
+    }) {
+  final CurrentForecastEntity(:conditionForecastEntity) = currentForecastEntity!;
+  final LocationForecastEntity(:name, :country) = locationForecastEntity!;
 
   return Column(children: [
     CachedNetworkImage(
       imageUrl: 'https:${conditionForecastEntity!.icon!}',
     ),
     const Gap(10.0),
+    Text('$name $country',
+        style: context.labelMediumStyle),
+    const Gap(5.0),
     Text(currentForecastEntity.conditionForecastEntity!.text!,
         style: context.labelLargeStyle!.copyWith(fontSize: 18)),
     const Gap(5.0),
