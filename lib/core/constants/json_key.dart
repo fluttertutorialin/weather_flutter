@@ -16,6 +16,12 @@ class JsonKeyConstant {
   static const String userIdJsonKey = 'userId';
   static const String mobileJsonKey = 'mobile';
 
+  //FORECAST INPUT PARAMTER
+  static const String idJsonParamKey = 'q';
+  static const String daysJsonParamKey = 'days';
+  static const String aqiJsonParamKey = 'aqi';
+  static const String alertsJsonParamKey = 'alerts';
+
   //SEARCH
   static const String IdJsonKey = 'id';
   static const String nameJsonKey = 'name';
