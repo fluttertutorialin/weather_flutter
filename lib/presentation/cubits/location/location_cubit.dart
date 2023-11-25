@@ -23,8 +23,8 @@ class LocationCubit extends Cubit<LocationState> {
     Either<Failure, List<LocationEntity>> response = await _getLocationRemoteUseCase(search);
     changeLoading();
 
-    emit(response.fold((exception) => LocationState.locationError(exception.message),
-        (locationResponse) => LocationState.locationList(locationResponse)));
+    emit(response.fold((exception) => LocationState.error(exception.message),
+        (locationResponse) => LocationState.success(locationResponse)));
   }
 
   void changeLoading() {

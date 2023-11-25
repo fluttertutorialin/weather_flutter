@@ -39,7 +39,7 @@ class _LocationState extends State<LocationPage> {
           appBar: AppBar(title: const Text('Search location')),
           body: BlocListener<LocationCubit, LocationState>(
               listener: (context, state) {
-                state.mapOrNull(locationError: (error) {
+                state.mapOrNull(error: (error) {
                   ScaffoldMessenger.of(context)
                     ..hideCurrentSnackBar()
                     ..showSnackBar(SnackBar(
@@ -66,12 +66,12 @@ class _LocationState extends State<LocationPage> {
                     const Gap(12.0),
                     Expanded(
                         child: BlocBuilder<LocationCubit, LocationState>(
+                            //buildWhen: (previous, current) {},
                             builder: (_, state) => state.when(
-                                locationList: (List<LocationEntity>
+                                success: (List<LocationEntity>
                                         locationList) =>
                                     _listViewBuild(locationList: locationList),
-                                locationError: (String error) =>
-                                    const ListViewEmptyWidget(),
+                                error: (String error) => const ListViewEmptyWidget(),
                                 initial: () => const ListViewEmptyWidget(),
                                 loading: (bool isLoading) =>
                                     const PlatformLoadingIndicatorWidget())))

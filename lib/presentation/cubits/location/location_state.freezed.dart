@@ -20,24 +20,24 @@ mixin _$LocationState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(List<LocationEntity> locationList) locationList,
-    required TResult Function(String error) locationError,
+    required TResult Function(List<LocationEntity> locationList) success,
+    required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isLoading)? loading,
-    TResult? Function(List<LocationEntity> locationList)? locationList,
-    TResult? Function(String error)? locationError,
+    TResult? Function(List<LocationEntity> locationList)? success,
+    TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isLoading)? loading,
-    TResult Function(List<LocationEntity> locationList)? locationList,
-    TResult Function(String error)? locationError,
+    TResult Function(List<LocationEntity> locationList)? success,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,24 +45,24 @@ mixin _$LocationState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_LocationSuccess value) locationList,
-    required TResult Function(_LocationError value) locationError,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_LocationSuccess value)? locationList,
-    TResult? Function(_LocationError value)? locationError,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_LocationSuccess value)? locationList,
-    TResult Function(_LocationError value)? locationError,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,8 +126,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(List<LocationEntity> locationList) locationList,
-    required TResult Function(String error) locationError,
+    required TResult Function(List<LocationEntity> locationList) success,
+    required TResult Function(String error) error,
   }) {
     return initial();
   }
@@ -137,8 +137,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isLoading)? loading,
-    TResult? Function(List<LocationEntity> locationList)? locationList,
-    TResult? Function(String error)? locationError,
+    TResult? Function(List<LocationEntity> locationList)? success,
+    TResult? Function(String error)? error,
   }) {
     return initial?.call();
   }
@@ -148,8 +148,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isLoading)? loading,
-    TResult Function(List<LocationEntity> locationList)? locationList,
-    TResult Function(String error)? locationError,
+    TResult Function(List<LocationEntity> locationList)? success,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -163,8 +163,8 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_LocationSuccess value) locationList,
-    required TResult Function(_LocationError value) locationError,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
     return initial(this);
   }
@@ -174,8 +174,8 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_LocationSuccess value)? locationList,
-    TResult? Function(_LocationError value)? locationError,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
   }
@@ -185,8 +185,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_LocationSuccess value)? locationList,
-    TResult Function(_LocationError value)? locationError,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -267,8 +267,8 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(List<LocationEntity> locationList) locationList,
-    required TResult Function(String error) locationError,
+    required TResult Function(List<LocationEntity> locationList) success,
+    required TResult Function(String error) error,
   }) {
     return loading(isLoading);
   }
@@ -278,8 +278,8 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isLoading)? loading,
-    TResult? Function(List<LocationEntity> locationList)? locationList,
-    TResult? Function(String error)? locationError,
+    TResult? Function(List<LocationEntity> locationList)? success,
+    TResult? Function(String error)? error,
   }) {
     return loading?.call(isLoading);
   }
@@ -289,8 +289,8 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isLoading)? loading,
-    TResult Function(List<LocationEntity> locationList)? locationList,
-    TResult Function(String error)? locationError,
+    TResult Function(List<LocationEntity> locationList)? success,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -304,8 +304,8 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_LocationSuccess value) locationList,
-    required TResult Function(_LocationError value) locationError,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
     return loading(this);
   }
@@ -315,8 +315,8 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_LocationSuccess value)? locationList,
-    TResult? Function(_LocationError value)? locationError,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
   }
@@ -326,8 +326,8 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_LocationSuccess value)? locationList,
-    TResult Function(_LocationError value)? locationError,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -347,20 +347,20 @@ abstract class _Loading implements LocationState {
 }
 
 /// @nodoc
-abstract class _$$LocationSuccessImplCopyWith<$Res> {
-  factory _$$LocationSuccessImplCopyWith(_$LocationSuccessImpl value,
-          $Res Function(_$LocationSuccessImpl) then) =
-      __$$LocationSuccessImplCopyWithImpl<$Res>;
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<LocationEntity> locationList});
 }
 
 /// @nodoc
-class __$$LocationSuccessImplCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$LocationSuccessImpl>
-    implements _$$LocationSuccessImplCopyWith<$Res> {
-  __$$LocationSuccessImplCopyWithImpl(
-      _$LocationSuccessImpl _value, $Res Function(_$LocationSuccessImpl) _then)
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -368,7 +368,7 @@ class __$$LocationSuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? locationList = null,
   }) {
-    return _then(_$LocationSuccessImpl(
+    return _then(_$SuccessImpl(
       null == locationList
           ? _value._locationList
           : locationList // ignore: cast_nullable_to_non_nullable
@@ -379,8 +379,8 @@ class __$$LocationSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LocationSuccessImpl implements _LocationSuccess {
-  const _$LocationSuccessImpl(final List<LocationEntity> locationList)
+class _$SuccessImpl implements _Success {
+  const _$SuccessImpl(final List<LocationEntity> locationList)
       : _locationList = locationList;
 
   final List<LocationEntity> _locationList;
@@ -393,14 +393,14 @@ class _$LocationSuccessImpl implements _LocationSuccess {
 
   @override
   String toString() {
-    return 'LocationState.locationList(locationList: $locationList)';
+    return 'LocationState.success(locationList: $locationList)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LocationSuccessImpl &&
+            other is _$SuccessImpl &&
             const DeepCollectionEquality()
                 .equals(other._locationList, _locationList));
   }
@@ -412,19 +412,18 @@ class _$LocationSuccessImpl implements _LocationSuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LocationSuccessImplCopyWith<_$LocationSuccessImpl> get copyWith =>
-      __$$LocationSuccessImplCopyWithImpl<_$LocationSuccessImpl>(
-          this, _$identity);
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
+      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(List<LocationEntity> locationList) locationList,
-    required TResult Function(String error) locationError,
+    required TResult Function(List<LocationEntity> locationList) success,
+    required TResult Function(String error) error,
   }) {
-    return locationList(this.locationList);
+    return success(locationList);
   }
 
   @override
@@ -432,10 +431,10 @@ class _$LocationSuccessImpl implements _LocationSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isLoading)? loading,
-    TResult? Function(List<LocationEntity> locationList)? locationList,
-    TResult? Function(String error)? locationError,
+    TResult? Function(List<LocationEntity> locationList)? success,
+    TResult? Function(String error)? error,
   }) {
-    return locationList?.call(this.locationList);
+    return success?.call(locationList);
   }
 
   @override
@@ -443,12 +442,12 @@ class _$LocationSuccessImpl implements _LocationSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isLoading)? loading,
-    TResult Function(List<LocationEntity> locationList)? locationList,
-    TResult Function(String error)? locationError,
+    TResult Function(List<LocationEntity> locationList)? success,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
-    if (locationList != null) {
-      return locationList(this.locationList);
+    if (success != null) {
+      return success(locationList);
     }
     return orElse();
   }
@@ -458,10 +457,10 @@ class _$LocationSuccessImpl implements _LocationSuccess {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_LocationSuccess value) locationList,
-    required TResult Function(_LocationError value) locationError,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
-    return locationList(this);
+    return success(this);
   }
 
   @override
@@ -469,10 +468,10 @@ class _$LocationSuccessImpl implements _LocationSuccess {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_LocationSuccess value)? locationList,
-    TResult? Function(_LocationError value)? locationError,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
   }) {
-    return locationList?.call(this);
+    return success?.call(this);
   }
 
   @override
@@ -480,42 +479,42 @@ class _$LocationSuccessImpl implements _LocationSuccess {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_LocationSuccess value)? locationList,
-    TResult Function(_LocationError value)? locationError,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
-    if (locationList != null) {
-      return locationList(this);
+    if (success != null) {
+      return success(this);
     }
     return orElse();
   }
 }
 
-abstract class _LocationSuccess implements LocationState {
-  const factory _LocationSuccess(final List<LocationEntity> locationList) =
-      _$LocationSuccessImpl;
+abstract class _Success implements LocationState {
+  const factory _Success(final List<LocationEntity> locationList) =
+      _$SuccessImpl;
 
   List<LocationEntity> get locationList;
   @JsonKey(ignore: true)
-  _$$LocationSuccessImplCopyWith<_$LocationSuccessImpl> get copyWith =>
+  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LocationErrorImplCopyWith<$Res> {
-  factory _$$LocationErrorImplCopyWith(
-          _$LocationErrorImpl value, $Res Function(_$LocationErrorImpl) then) =
-      __$$LocationErrorImplCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$LocationErrorImplCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$LocationErrorImpl>
-    implements _$$LocationErrorImplCopyWith<$Res> {
-  __$$LocationErrorImplCopyWithImpl(
-      _$LocationErrorImpl _value, $Res Function(_$LocationErrorImpl) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -523,7 +522,7 @@ class __$$LocationErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$LocationErrorImpl(
+    return _then(_$ErrorImpl(
       null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -534,22 +533,22 @@ class __$$LocationErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LocationErrorImpl implements _LocationError {
-  const _$LocationErrorImpl(this.error);
+class _$ErrorImpl implements _Error {
+  const _$ErrorImpl(this.error);
 
   @override
   final String error;
 
   @override
   String toString() {
-    return 'LocationState.locationError(error: $error)';
+    return 'LocationState.error(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LocationErrorImpl &&
+            other is _$ErrorImpl &&
             (identical(other.error, error) || other.error == error));
   }
 
@@ -559,18 +558,18 @@ class _$LocationErrorImpl implements _LocationError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LocationErrorImplCopyWith<_$LocationErrorImpl> get copyWith =>
-      __$$LocationErrorImplCopyWithImpl<_$LocationErrorImpl>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(bool isLoading) loading,
-    required TResult Function(List<LocationEntity> locationList) locationList,
-    required TResult Function(String error) locationError,
+    required TResult Function(List<LocationEntity> locationList) success,
+    required TResult Function(String error) error,
   }) {
-    return locationError(error);
+    return error(this.error);
   }
 
   @override
@@ -578,10 +577,10 @@ class _$LocationErrorImpl implements _LocationError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(bool isLoading)? loading,
-    TResult? Function(List<LocationEntity> locationList)? locationList,
-    TResult? Function(String error)? locationError,
+    TResult? Function(List<LocationEntity> locationList)? success,
+    TResult? Function(String error)? error,
   }) {
-    return locationError?.call(error);
+    return error?.call(this.error);
   }
 
   @override
@@ -589,12 +588,12 @@ class _$LocationErrorImpl implements _LocationError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(bool isLoading)? loading,
-    TResult Function(List<LocationEntity> locationList)? locationList,
-    TResult Function(String error)? locationError,
+    TResult Function(List<LocationEntity> locationList)? success,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
-    if (locationError != null) {
-      return locationError(error);
+    if (error != null) {
+      return error(this.error);
     }
     return orElse();
   }
@@ -604,10 +603,10 @@ class _$LocationErrorImpl implements _LocationError {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_LocationSuccess value) locationList,
-    required TResult Function(_LocationError value) locationError,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
   }) {
-    return locationError(this);
+    return error(this);
   }
 
   @override
@@ -615,10 +614,10 @@ class _$LocationErrorImpl implements _LocationError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_LocationSuccess value)? locationList,
-    TResult? Function(_LocationError value)? locationError,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
   }) {
-    return locationError?.call(this);
+    return error?.call(this);
   }
 
   @override
@@ -626,22 +625,22 @@ class _$LocationErrorImpl implements _LocationError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_LocationSuccess value)? locationList,
-    TResult Function(_LocationError value)? locationError,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
-    if (locationError != null) {
-      return locationError(this);
+    if (error != null) {
+      return error(this);
     }
     return orElse();
   }
 }
 
-abstract class _LocationError implements LocationState {
-  const factory _LocationError(final String error) = _$LocationErrorImpl;
+abstract class _Error implements LocationState {
+  const factory _Error(final String error) = _$ErrorImpl;
 
   String get error;
   @JsonKey(ignore: true)
-  _$$LocationErrorImplCopyWith<_$LocationErrorImpl> get copyWith =>
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

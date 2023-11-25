@@ -7,7 +7,7 @@ part 'location_state.freezed.dart';
 class LocationState with _$LocationState {
   const factory LocationState.initial() = _Initial;
   const factory LocationState.loading(bool isLoading) = _Loading;
-  const factory LocationState.locationList(List<LocationEntity> locationList) = _LocationSuccess;
+  const factory LocationState.success(List<LocationEntity> locationList) = _Success;
 
-  const factory LocationState.locationError(String error) = _LocationError;
+  const factory LocationState.error(String error) = _Error;
 }
