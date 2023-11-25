@@ -33,7 +33,8 @@ Weather app display the current and next some days display the weather condition
 12. Impeller support
 13. .env: API url and key define
 14. entities (domain) - models (data) mapper 
-
+15. Forecast Api: 
+    location, current, forecast (forecastday [])
 ```
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'failures.freezed.dart';
@@ -45,7 +46,6 @@ const factory ServerFailure.serverError({T? msg}) = ServerError;
 const factory ServerFailure.apiFailure({T? msg}) = ApiFailure;
 }
    ```
-
 
 <p align="center">
   <img alt="" src="/screenshot/screenshot_1.jpg" width="180"/>
