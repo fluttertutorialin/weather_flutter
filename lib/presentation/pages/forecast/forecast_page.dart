@@ -64,13 +64,16 @@ class _ForecastState extends State<ForecastPage> {
               ]))));
 }
 
-///CURRENT FORECAST DISPLAY
+///USER BASED LOCATION CITY NAME, COUNTRY NAME AND CURRENT FORECAST DISPLAY
 _currentForecastView(
     {required BuildContext context,
     required CurrentForecastEntity? currentForecastEntity,
     required LocationForecastEntity? locationForecastEntity}) {
-  final CurrentForecastEntity(:conditionForecastEntity) =
-      currentForecastEntity!;
+
+  //FORECAST
+  final CurrentForecastEntity(:conditionForecastEntity) =currentForecastEntity!;
+
+  //COUNTRY
   final LocationForecastEntity(:name, :country) = locationForecastEntity!;
 
   return Column(children: [
