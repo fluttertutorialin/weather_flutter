@@ -11,6 +11,7 @@ enum RoutesName {
 }
 
 extension RoutesNameHelper on RoutesName {
+  //name
   String get name {
     switch (this) {
       case RoutesName.splash:
@@ -36,6 +37,7 @@ extension RoutesNameHelper on RoutesName {
     }
   }
 
+  //path
   String get path {
     switch (this) {
       case RoutesName.splash:
