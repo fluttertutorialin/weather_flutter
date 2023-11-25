@@ -434,15 +434,11 @@ class CustomColors extends ThemeExtension<CustomColors> {
       tagsBackground: tagsBackground ?? this.tagsBackground,
       tagsBackgroundHover: tagsBackgroundHover ?? this.tagsBackgroundHover,
       tagsText: tagsText ?? this.tagsText,
-      chatInputPanelBackground:
-          chatInputPanelBackground ?? this.chatInputPanelBackground,
+      chatInputPanelBackground: chatInputPanelBackground ?? this.chatInputPanelBackground,
       chatInputPanelText: chatInputPanelText ?? this.chatInputPanelText,
-      chatInputAreaBackground:
-          chatInputAreaBackground ?? this.chatInputAreaBackground,
-      chatExampleItemBackground:
-          chatExampleItemBackground ?? this.chatExampleItemBackground,
-      chatExampleItemBackgroundHover:
-          chatExampleItemBackgroundHover ?? this.chatExampleItemBackgroundHover,
+      chatInputAreaBackground: chatInputAreaBackground ?? this.chatInputAreaBackground,
+      chatExampleItemBackground: chatExampleItemBackground ?? this.chatExampleItemBackground,
+      chatExampleItemBackgroundHover: chatExampleItemBackgroundHover ?? this.chatExampleItemBackgroundHover,
       chatExampleItemText: chatExampleItemText ?? this.chatExampleItemText,
       chatExampleTitleText: chatExampleTitleText ?? this.chatExampleTitleText,
       markdownLinkColor: markdownLinkColor ?? this.markdownLinkColor,
@@ -450,48 +446,32 @@ class CustomColors extends ThemeExtension<CustomColors> {
       markdownCodeColor: markdownCodeColor ?? this.markdownCodeColor,
       boxShadowColor: boxShadowColor ?? this.boxShadowColor,
       backgroundColor: backgroundColor ?? this.backgroundColor,
-      backgroundInvertedColor:
-          backgroundInvertedColor ?? this.backgroundInvertedColor,
-      backgroundContainerColor:
-          backgroundContainerColor ?? this.backgroundContainerColor,
+      backgroundInvertedColor: backgroundInvertedColor ?? this.backgroundInvertedColor,
+      backgroundContainerColor: backgroundContainerColor ?? this.backgroundContainerColor,
       textFieldBorderColor: textFieldBorderColor ?? this.textFieldBorderColor,
       iconButtonColor: iconButtonColor ?? this.iconButtonColor,
       linkColor: linkColor ?? this.linkColor,
       weakLinkColor: weakLinkColor ?? this.weakLinkColor,
       weakTextColor: weakTextColor ?? this.weakTextColor,
       weakTextColorPlus: weakTextColorPlus ?? this.weakTextColorPlus,
-      weakTextColorPlusPlus:
-          weakTextColorPlusPlus ?? this.weakTextColorPlusPlus,
-      dialogDefaultTextColor:
-          dialogDefaultTextColor ?? this.dialogDefaultTextColor,
-      dialogBackgroundColor:
-          dialogBackgroundColor ?? this.dialogBackgroundColor,
-      columnBlockBorderColor:
-          columnBlockBorderColor ?? this.columnBlockBorderColor,
-      columnBlockBackgroundColor:
-          columnBlockBackgroundColor ?? this.columnBlockBackgroundColor,
-      columnBlockDividerColor:
-          columnBlockDividerColor ?? this.columnBlockDividerColor,
+      weakTextColorPlusPlus: weakTextColorPlusPlus ?? this.weakTextColorPlusPlus,
+      dialogDefaultTextColor: dialogDefaultTextColor ?? this.dialogDefaultTextColor,
+      dialogBackgroundColor: dialogBackgroundColor ?? this.dialogBackgroundColor,
+      columnBlockBorderColor: columnBlockBorderColor ?? this.columnBlockBorderColor,
+      columnBlockBackgroundColor: columnBlockBackgroundColor ?? this.columnBlockBackgroundColor,
+      columnBlockDividerColor: columnBlockDividerColor ?? this.columnBlockDividerColor,
       textfieldHintColor: textfieldHintColor ?? this.textfieldHintColor,
-      textfieldHintDeepColor:
-          textfieldHintDeepColor ?? this.textfieldHintDeepColor,
+      textfieldHintDeepColor: textfieldHintDeepColor ?? this.textfieldHintDeepColor,
       textfieldLabelColor: textfieldLabelColor ?? this.textfieldLabelColor,
       textfieldValueColor: textfieldValueColor ?? this.textfieldValueColor,
-      textfieldBackgroundColor:
-          textfieldBackgroundColor ?? this.textfieldBackgroundColor,
-      textfieldSelectorColor:
-          textfieldSelectorColor ?? this.textfieldSelectorColor,
-      paymentItemBorderColor:
-          paymentItemBorderColor ?? this.paymentItemBorderColor,
-      paymentItemBackgroundColor:
-          paymentItemBackgroundColor ?? this.paymentItemBackgroundColor,
-      paymentItemTitleColor:
-          paymentItemTitleColor ?? this.paymentItemTitleColor,
-      paymentItemPriceColor:
-          paymentItemPriceColor ?? this.paymentItemPriceColor,
+      textfieldBackgroundColor: textfieldBackgroundColor ?? this.textfieldBackgroundColor,
+      textfieldSelectorColor: textfieldSelectorColor ?? this.textfieldSelectorColor,
+      paymentItemBorderColor: paymentItemBorderColor ?? this.paymentItemBorderColor,
+      paymentItemBackgroundColor: paymentItemBackgroundColor ?? this.paymentItemBackgroundColor,
+      paymentItemTitleColor: paymentItemTitleColor ?? this.paymentItemTitleColor,
+      paymentItemPriceColor: paymentItemPriceColor ?? this.paymentItemPriceColor,
       paymentItemDateColor: paymentItemDateColor ?? this.paymentItemDateColor,
-      paymentItemDescriptionColor:
-          paymentItemDescriptionColor ?? this.paymentItemDescriptionColor,
+      paymentItemDescriptionColor: paymentItemDescriptionColor ?? this.paymentItemDescriptionColor,
     );
   }
 }
@@ -556,6 +536,7 @@ ThemeData createLightThemeData() {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           elevation: 0),
 
+      snackBarTheme: const SnackBarThemeData(backgroundColor: Color(0xFFF4DDDD)),
       textTheme: TextTheme(
           displaySmall: TextStyleConstant.displaySmallLightTextStyle,
           displayMedium: TextStyleConstant.displayMediumLightTextStyle,

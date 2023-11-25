@@ -16,12 +16,55 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$LocationState {
-  bool get loading => throw _privateConstructorUsedError;
-  List<LocationEntity> get locationList => throw _privateConstructorUsedError;
-  String get error => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $LocationStateCopyWith<LocationState> get copyWith =>
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isLoading) loading,
+    required TResult Function(List<LocationEntity> locationList) locationList,
+    required TResult Function(String error) locationError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(List<LocationEntity> locationList)? locationList,
+    TResult? Function(String error)? locationError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isLoading)? loading,
+    TResult Function(List<LocationEntity> locationList)? locationList,
+    TResult Function(String error)? locationError,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LocationSuccess value) locationList,
+    required TResult Function(_LocationError value) locationError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LocationSuccess value)? locationList,
+    TResult? Function(_LocationError value)? locationError,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LocationSuccess value)? locationList,
+    TResult Function(_LocationError value)? locationError,
+    required TResult orElse(),
+  }) =>
       throw _privateConstructorUsedError;
 }
 
@@ -30,8 +73,6 @@ abstract class $LocationStateCopyWith<$Res> {
   factory $LocationStateCopyWith(
           LocationState value, $Res Function(LocationState) then) =
       _$LocationStateCopyWithImpl<$Res, LocationState>;
-  @useResult
-  $Res call({bool loading, List<LocationEntity> locationList, String error});
 }
 
 /// @nodoc
@@ -43,86 +84,305 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
 
-  @pragma('vm:prefer-inline')
+/// @nodoc
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
+
   @override
-  $Res call({
-    Object? loading = null,
-    Object? locationList = null,
-    Object? error = null,
+  String toString() {
+    return 'LocationState.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isLoading) loading,
+    required TResult Function(List<LocationEntity> locationList) locationList,
+    required TResult Function(String error) locationError,
   }) {
-    return _then(_value.copyWith(
-      loading: null == loading
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      locationList: null == locationList
-          ? _value.locationList
-          : locationList // ignore: cast_nullable_to_non_nullable
-              as List<LocationEntity>,
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(List<LocationEntity> locationList)? locationList,
+    TResult? Function(String error)? locationError,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isLoading)? loading,
+    TResult Function(List<LocationEntity> locationList)? locationList,
+    TResult Function(String error)? locationError,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LocationSuccess value) locationList,
+    required TResult Function(_LocationError value) locationError,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LocationSuccess value)? locationList,
+    TResult? Function(_LocationError value)? locationError,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LocationSuccess value)? locationList,
+    TResult Function(_LocationError value)? locationError,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
   }
 }
 
-/// @nodoc
-abstract class _$$LocationStateImplCopyWith<$Res>
-    implements $LocationStateCopyWith<$Res> {
-  factory _$$LocationStateImplCopyWith(
-          _$LocationStateImpl value, $Res Function(_$LocationStateImpl) then) =
-      __$$LocationStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool loading, List<LocationEntity> locationList, String error});
+abstract class _Initial implements LocationState {
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-class __$$LocationStateImplCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res, _$LocationStateImpl>
-    implements _$$LocationStateImplCopyWith<$Res> {
-  __$$LocationStateImplCopyWithImpl(
-      _$LocationStateImpl _value, $Res Function(_$LocationStateImpl) _then)
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isLoading});
+}
+
+/// @nodoc
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? loading = null,
-    Object? locationList = null,
-    Object? error = null,
+    Object? isLoading = null,
   }) {
-    return _then(_$LocationStateImpl(
-      loading: null == loading
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
+    return _then(_$LoadingImpl(
+      null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      locationList: null == locationList
-          ? _value._locationList
-          : locationList // ignore: cast_nullable_to_non_nullable
-              as List<LocationEntity>,
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$LocationStateImpl implements _LocationState {
-  const _$LocationStateImpl(
-      {this.loading = false,
-      required final List<LocationEntity> locationList,
-      this.error = ''})
-      : _locationList = locationList;
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl(this.isLoading);
 
   @override
-  @JsonKey()
-  final bool loading;
+  final bool isLoading;
+
+  @override
+  String toString() {
+    return 'LocationState.loading(isLoading: $isLoading)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingImpl &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isLoading);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
+      __$$LoadingImplCopyWithImpl<_$LoadingImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isLoading) loading,
+    required TResult Function(List<LocationEntity> locationList) locationList,
+    required TResult Function(String error) locationError,
+  }) {
+    return loading(isLoading);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(List<LocationEntity> locationList)? locationList,
+    TResult? Function(String error)? locationError,
+  }) {
+    return loading?.call(isLoading);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isLoading)? loading,
+    TResult Function(List<LocationEntity> locationList)? locationList,
+    TResult Function(String error)? locationError,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(isLoading);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LocationSuccess value) locationList,
+    required TResult Function(_LocationError value) locationError,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LocationSuccess value)? locationList,
+    TResult? Function(_LocationError value)? locationError,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LocationSuccess value)? locationList,
+    TResult Function(_LocationError value)? locationError,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements LocationState {
+  const factory _Loading(final bool isLoading) = _$LoadingImpl;
+
+  bool get isLoading;
+  @JsonKey(ignore: true)
+  _$$LoadingImplCopyWith<_$LoadingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LocationSuccessImplCopyWith<$Res> {
+  factory _$$LocationSuccessImplCopyWith(_$LocationSuccessImpl value,
+          $Res Function(_$LocationSuccessImpl) then) =
+      __$$LocationSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<LocationEntity> locationList});
+}
+
+/// @nodoc
+class __$$LocationSuccessImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LocationSuccessImpl>
+    implements _$$LocationSuccessImplCopyWith<$Res> {
+  __$$LocationSuccessImplCopyWithImpl(
+      _$LocationSuccessImpl _value, $Res Function(_$LocationSuccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? locationList = null,
+  }) {
+    return _then(_$LocationSuccessImpl(
+      null == locationList
+          ? _value._locationList
+          : locationList // ignore: cast_nullable_to_non_nullable
+              as List<LocationEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LocationSuccessImpl implements _LocationSuccess {
+  const _$LocationSuccessImpl(final List<LocationEntity> locationList)
+      : _locationList = locationList;
+
   final List<LocationEntity> _locationList;
   @override
   List<LocationEntity> get locationList {
@@ -132,50 +392,256 @@ class _$LocationStateImpl implements _LocationState {
   }
 
   @override
-  @JsonKey()
-  final String error;
-
-  @override
   String toString() {
-    return 'LocationState(loading: $loading, locationList: $locationList, error: $error)';
+    return 'LocationState.locationList(locationList: $locationList)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LocationStateImpl &&
-            (identical(other.loading, loading) || other.loading == loading) &&
+            other is _$LocationSuccessImpl &&
             const DeepCollectionEquality()
-                .equals(other._locationList, _locationList) &&
-            (identical(other.error, error) || other.error == error));
+                .equals(other._locationList, _locationList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loading,
-      const DeepCollectionEquality().hash(_locationList), error);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_locationList));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LocationStateImplCopyWith<_$LocationStateImpl> get copyWith =>
-      __$$LocationStateImplCopyWithImpl<_$LocationStateImpl>(this, _$identity);
+  _$$LocationSuccessImplCopyWith<_$LocationSuccessImpl> get copyWith =>
+      __$$LocationSuccessImplCopyWithImpl<_$LocationSuccessImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isLoading) loading,
+    required TResult Function(List<LocationEntity> locationList) locationList,
+    required TResult Function(String error) locationError,
+  }) {
+    return locationList(this.locationList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(List<LocationEntity> locationList)? locationList,
+    TResult? Function(String error)? locationError,
+  }) {
+    return locationList?.call(this.locationList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isLoading)? loading,
+    TResult Function(List<LocationEntity> locationList)? locationList,
+    TResult Function(String error)? locationError,
+    required TResult orElse(),
+  }) {
+    if (locationList != null) {
+      return locationList(this.locationList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LocationSuccess value) locationList,
+    required TResult Function(_LocationError value) locationError,
+  }) {
+    return locationList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LocationSuccess value)? locationList,
+    TResult? Function(_LocationError value)? locationError,
+  }) {
+    return locationList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LocationSuccess value)? locationList,
+    TResult Function(_LocationError value)? locationError,
+    required TResult orElse(),
+  }) {
+    if (locationList != null) {
+      return locationList(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _LocationState implements LocationState {
-  const factory _LocationState(
-      {final bool loading,
-      required final List<LocationEntity> locationList,
-      final String error}) = _$LocationStateImpl;
+abstract class _LocationSuccess implements LocationState {
+  const factory _LocationSuccess(final List<LocationEntity> locationList) =
+      _$LocationSuccessImpl;
+
+  List<LocationEntity> get locationList;
+  @JsonKey(ignore: true)
+  _$$LocationSuccessImplCopyWith<_$LocationSuccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LocationErrorImplCopyWith<$Res> {
+  factory _$$LocationErrorImplCopyWith(
+          _$LocationErrorImpl value, $Res Function(_$LocationErrorImpl) then) =
+      __$$LocationErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$LocationErrorImplCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$LocationErrorImpl>
+    implements _$$LocationErrorImplCopyWith<$Res> {
+  __$$LocationErrorImplCopyWithImpl(
+      _$LocationErrorImpl _value, $Res Function(_$LocationErrorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$LocationErrorImpl(
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LocationErrorImpl implements _LocationError {
+  const _$LocationErrorImpl(this.error);
 
   @override
-  bool get loading;
+  final String error;
+
   @override
-  List<LocationEntity> get locationList;
+  String toString() {
+    return 'LocationState.locationError(error: $error)';
+  }
+
   @override
-  String get error;
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LocationErrorImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
   @override
+  int get hashCode => Object.hash(runtimeType, error);
+
   @JsonKey(ignore: true)
-  _$$LocationStateImplCopyWith<_$LocationStateImpl> get copyWith =>
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LocationErrorImplCopyWith<_$LocationErrorImpl> get copyWith =>
+      __$$LocationErrorImplCopyWithImpl<_$LocationErrorImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(bool isLoading) loading,
+    required TResult Function(List<LocationEntity> locationList) locationList,
+    required TResult Function(String error) locationError,
+  }) {
+    return locationError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(bool isLoading)? loading,
+    TResult? Function(List<LocationEntity> locationList)? locationList,
+    TResult? Function(String error)? locationError,
+  }) {
+    return locationError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(bool isLoading)? loading,
+    TResult Function(List<LocationEntity> locationList)? locationList,
+    TResult Function(String error)? locationError,
+    required TResult orElse(),
+  }) {
+    if (locationError != null) {
+      return locationError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_LocationSuccess value) locationList,
+    required TResult Function(_LocationError value) locationError,
+  }) {
+    return locationError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_LocationSuccess value)? locationList,
+    TResult? Function(_LocationError value)? locationError,
+  }) {
+    return locationError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_LocationSuccess value)? locationList,
+    TResult Function(_LocationError value)? locationError,
+    required TResult orElse(),
+  }) {
+    if (locationError != null) {
+      return locationError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LocationError implements LocationState {
+  const factory _LocationError(final String error) = _$LocationErrorImpl;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$LocationErrorImplCopyWith<_$LocationErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

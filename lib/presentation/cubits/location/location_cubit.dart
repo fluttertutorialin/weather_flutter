@@ -13,7 +13,7 @@ class LocationCubit extends Cubit<LocationState> {
 
   LocationCubit({required GetLocationRemoteUseCase getLocationRemoteUseCase})
       : _getLocationRemoteUseCase = getLocationRemoteUseCase,
-        super(const LocationState(locationList: []));
+        super(const LocationState.initial());
 
   bool isLoading = false;
 
@@ -23,12 +23,12 @@ class LocationCubit extends Cubit<LocationState> {
     Either<Failure, List<LocationEntity>> response = await _getLocationRemoteUseCase(search);
     changeLoading();
 
-    emit(response.fold((exception) => state.copyWith(error: exception.message),
-        (locationResponse) => state.copyWith(locationList: locationResponse)));
+    emit(response.fold((exception) => LocationState.locationError(exception.message),
+        (locationResponse) => LocationState.locationList(locationResponse)));
   }
 
   void changeLoading() {
     isLoading = !isLoading;
-    emit(state.copyWith(loading: isLoading));
+    emit(LocationState.loading(isLoading));
   }
 }

@@ -27,8 +27,10 @@ class _LoginPageState extends State<LoginPage> {
   final FocusNode _mobileFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
 
-  final TextEditingController _mobileController = TextEditingController(text: '1234567890');
-  final TextEditingController _passwordController = TextEditingController(text: '1234567');
+  final TextEditingController _mobileController =
+      TextEditingController(text: '1234567890');
+  final TextEditingController _passwordController =
+      TextEditingController(text: '1234567');
 
   @override
   void dispose() {
@@ -62,7 +64,9 @@ class _LoginPageState extends State<LoginPage> {
 
                     ScaffoldMessenger.of(context)
                       ..hideCurrentSnackBar()
-                      ..showSnackBar(SnackBar(content: Text(error)));
+                      ..showSnackBar(SnackBar(
+                          content:
+                              Text(error, style: context.displayMediumStyle)));
                   });
                 },
                 child: /*BlocBuilder<LoginCubit, LoginState>(builder: (context, state) {
@@ -198,7 +202,8 @@ class _LoginPageState extends State<LoginPage> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
               child: Text(context.l10n.newSignUpNavigation,
-                  textAlign: TextAlign.center, style: context.displaySmallStyle),
+                  textAlign: TextAlign.center,
+                  style: context.displaySmallStyle),
             ))
       ]);
 }
