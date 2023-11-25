@@ -7,8 +7,7 @@ enum RoutesName {
   home,
 
   location,
-  forecast,
-
+  forecast
 }
 
 extension RoutesNameHelper on RoutesName {

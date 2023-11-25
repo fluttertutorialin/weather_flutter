@@ -79,21 +79,16 @@ final goRouter = GoRouter(
                                   (BuildContext context, GoRouterState state) {
                                 final LocationEntity(:id) =
                                     state.extra as LocationEntity;
-                                return MultiBlocProvider(
-                                  providers: [
-                                    BlocProvider<ForecastCubit>(
+                                return MultiBlocProvider(providers: [
+                                  BlocProvider<ForecastCubit>(
                                       create: (_) => getIt<ForecastCubit>()
-                                        ..forecastId(id: id!),
-                                    ),
-                                    BlocProvider<SettingCubit>(
+                                        ..forecastId(id: id!)),
+                                  BlocProvider<SettingCubit>(
                                       create: (BuildContext context) =>
                                           getIt<SettingCubit>()
                                             ..unitChange(
-                                                temperatureUnits: true),
-                                    )
-                                  ],
-                                  child: const ForecastPage(),
-                                );
+                                                temperatureUnits: true))
+                                ], child: const ForecastPage());
                               })
                         ])
                   ])
