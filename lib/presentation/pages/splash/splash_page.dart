@@ -7,11 +7,34 @@ import '../../../core/router/router_path.dart';
 import '../../../injectable.dart';
 import '../../cubits/splash/splash_cubits.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
+  @override
+  createState() => _SplashState();
+}
+
+class _SplashState extends State<SplashPage>
+    with SingleTickerProviderStateMixin {
   //final SplashCubit splashCubit;
-  //const SplashPage(this.splashCubit, {Key? key}) : super(key: key);
+
+  late AnimationController _pulseController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _pulseController =
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+
+    _pulseController.repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _pulseController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) => BlocConsumer<SplashCubit, SplashState>(
@@ -23,8 +46,13 @@ class SplashPage extends StatelessWidget {
             unAuthenticatedState: () => context.go(RoutesName.login.path));
       },
       builder: (_, state) => Scaffold(
-          body:
-              Center(child: Text(context.l10n.appName, style: context.headlineLargeStyle))));
+          body: Center(
+              child: FadeTransition(
+                  opacity: Tween<double>(begin: 0, end: 1).animate(
+                      CurvedAnimation(
+                          parent: _pulseController, curve: Curves.linear)),
+                  child: Text(context.l10n.appName,
+                      style: context.headlineLargeStyle)))));
 }
 
 /*

@@ -16,7 +16,7 @@ class SplashCubit extends Cubit<SplashState> {
 
   void isAuthenticatedUserCheck() async {
     final bool? authenticated = _session.isLoginRead();
-    Future.delayed(const Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 5), () {
       authenticated!
           ? emit(const SplashState.authenticate())
           : emit(const SplashState.unAuthenticatedState());
