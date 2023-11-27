@@ -47,8 +47,8 @@ class _LocationState extends State<LocationPage> {
                   ScaffoldMessenger.of(context)
                     ..hideCurrentSnackBar()
                     ..showSnackBar(SnackBar(
-                        content: Text(error,
-                            style: context.displayMediumStyle)));
+                        content:
+                            Text(error, style: context.displayMediumStyle)));
                 });
               },
               child: Padding(
@@ -97,15 +97,14 @@ class _LocationState extends State<LocationPage> {
     return Card(
         elevation: 0.3,
         child: ListTile(
-          onTap: () {
-            searchController.clear();
-            context.goNamed(RoutesName.forecast.path, extra: locationEntity);
-            PropertyConstant.keyboardHide();
-          },
-          leading: CircleAvatar(child: Text(country![0])),
-          title: Text(name!, style: context.displayMediumStyle),
-          subtitle:
-              Text('${region!}, $country', style: context.labelSmallStyle),
-        ));
+            onTap: () {
+              searchController.clear();
+              context.goNamed(RoutesName.forecast.path, extra: locationEntity);
+              PropertyConstant.keyboardHide();
+            },
+            leading: CircleAvatar(child: Text(country![0])),
+            title: Text(name!, style: context.displayMediumStyle),
+            subtitle:
+                Text('${region!}, $country', style: context.labelSmallStyle)));
   }
 }

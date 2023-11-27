@@ -80,7 +80,6 @@ class _ForecastState extends State<ForecastPage> {
                                     unit: unit),
                                 const Gap(18.0),
                                 _fewDayForecastView(
-                                    context: context,
                                     forecastSubEntity:
                                         state.forecastEntity.forecastSubEntity,
                                     unit: unit)
@@ -89,95 +88,95 @@ class _ForecastState extends State<ForecastPage> {
                   });
                 }))
               ]))));
-}
 
-///USER BASED LOCATION CITY NAME, COUNTRY NAME AND CURRENT FORECAST DISPLAY
-_currentForecastView(
-    {required BuildContext context,
-    required CurrentForecastEntity? currentForecastEntity,
-    required LocationForecastEntity? locationForecastEntity,
-    required bool? unit}) {
-  //FORECAST
-  final CurrentForecastEntity(:conditionForecastEntity) =
-      currentForecastEntity!;
+  ///USER BASED LOCATION CITY NAME, COUNTRY NAME AND CURRENT FORECAST DISPLAY
+  _currentForecastView(
+      {required BuildContext context,
+      required CurrentForecastEntity? currentForecastEntity,
+      required LocationForecastEntity? locationForecastEntity,
+      required bool? unit}) {
+    //FORECAST
+    final CurrentForecastEntity(:conditionForecastEntity) =
+        currentForecastEntity!;
 
-  //COUNTRY
-  final LocationForecastEntity(:name, :country) = locationForecastEntity!;
+    //COUNTRY
+    final LocationForecastEntity(:name, :country) = locationForecastEntity!;
 
-  return Column(children: [
-    CachedNetworkImage(imageUrl: 'https:${conditionForecastEntity!.icon!}'),
-    const Gap(10.0),
-    Text('$name, $country', style: context.labelMediumStyle),
-    const Gap(5.0),
-    Text(currentForecastEntity.conditionForecastEntity!.text!,
-        style: context.labelLargeStyle!.copyWith(fontSize: 18)),
-    const Gap(5.0),
-    Text(
-        unit!
-            ? currentForecastEntity.tempF!.fahrenheitToCelsius()
-            : currentForecastEntity.tempF!.celsiusToFahrenheit(),
-        style: context.displayLargeStyle)
-  ]);
-}
+    return Column(children: [
+      CachedNetworkImage(imageUrl: 'https:${conditionForecastEntity!.icon!}'),
+      const Gap(10.0),
+      Text('$name, $country', style: context.labelMediumStyle),
+      const Gap(5.0),
+      Text(currentForecastEntity.conditionForecastEntity!.text!,
+          style: context.labelLargeStyle!.copyWith(fontSize: 18)),
+      const Gap(5.0),
+      Text(
+          unit!
+              ? currentForecastEntity.tempF!.fahrenheitToCelsius()
+              : currentForecastEntity.tempF!.celsiusToFahrenheit(),
+          style: context.displayLargeStyle)
+    ]);
+  }
 
-///CURRENT AND FEW NEXT FORECAST DISPLAY
-_fewDayForecastView(
-    {required BuildContext context,
-    required ForecastSubEntity? forecastSubEntity,
-    required bool? unit}) {
-  return Card(
-      color: Theme.of(context).colorScheme.surfaceVariant,
-      child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Text(
-                context.l10n.nDaysForecast(
-                    '${forecastSubEntity!.forecastDayListEntity!.length}'),
-                style: context.titleMediumStyle),
-            const SizedBox(height: 16),
-            ListView.separated(
-                shrinkWrap: true,
-                itemCount: forecastSubEntity.forecastDayListEntity!.length,
-                itemBuilder: (context, index) {
-                  final ForecastDayEntity(:date, :dayEntity) =
-                      forecastSubEntity.forecastDayListEntity![index];
-                  final DayEntity(:maxTempF, :minTempF) = dayEntity!;
-                  return Row(children: [
-                    const Spacer(),
-                    SizedBox(
-                        width: 100,
-                        child: (DateTime.parse(date!).toTimeZone.day ==
-                                DateTime.now().toTimeZone.day)
-                            ? Text('Today',
-                                textAlign: TextAlign.center,
-                                style: context.titleSmallStyle)
-                            : Text(date, textAlign: TextAlign.center)),
-                    const Gap(16.0),
-                    CachedNetworkImage(
-                        width: 34,
-                        height: 34,
-                        imageUrl:
-                            'https:${dayEntity.conditionForecastEntity!.icon!}'),
-                    const Gap(16.0),
-                    Row(children: [
-                      const SizedBox(width: 8),
-                      Text(unit!
-                          ? maxTempF!.fahrenheitToCelsius()
-                          : maxTempF!.celsiusToFahrenheit()),
-                      const SizedBox(width: 8),
-                      const Text('/'),
-                      const SizedBox(width: 8),
-                      Text(unit
-                          ? minTempF!.fahrenheitToCelsius()
-                          : minTempF!.celsiusToFahrenheit()),
-                      const SizedBox(width: 8)
-                    ]),
-                    const Spacer(flex: 2)
-                  ]);
-                },
-                separatorBuilder: (context, index) => const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
-                    child: Divider(thickness: 0.5)))
-          ])));
+  ///CURRENT AND FEW NEXT FORECAST DISPLAY
+  _fewDayForecastView(
+      {required ForecastSubEntity? forecastSubEntity, required bool? unit}) {
+    return Card(
+        color: Theme.of(context).colorScheme.surfaceVariant,
+        child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                      context.l10n.nDaysForecast(
+                          '${forecastSubEntity!.forecastDayListEntity!.length}'),
+                      style: context.titleMediumStyle),
+                  const SizedBox(height: 16),
+                  ListView.separated(
+                      shrinkWrap: true,
+                      itemCount:
+                          forecastSubEntity.forecastDayListEntity!.length,
+                      itemBuilder: (context, index) {
+                        final ForecastDayEntity(:date, :dayEntity) =
+                            forecastSubEntity.forecastDayListEntity![index];
+                        final DayEntity(:maxTempF, :minTempF) = dayEntity!;
+                        return Row(children: [
+                          const Spacer(),
+                          SizedBox(
+                              width: 100,
+                              child: (DateTime.parse(date!).toTimeZone.day ==
+                                      DateTime.now().toTimeZone.day)
+                                  ? Text('Today',
+                                      textAlign: TextAlign.center,
+                                      style: context.titleSmallStyle)
+                                  : Text(date, textAlign: TextAlign.center)),
+                          const Gap(16.0),
+                          CachedNetworkImage(
+                              width: 34,
+                              height: 34,
+                              imageUrl:
+                                  'https:${dayEntity.conditionForecastEntity!.icon!}'),
+                          const Gap(16.0),
+                          Row(children: [
+                            const SizedBox(width: 8),
+                            Text(unit!
+                                ? maxTempF!.fahrenheitToCelsius()
+                                : maxTempF!.celsiusToFahrenheit()),
+                            const SizedBox(width: 8),
+                            const Text('/'),
+                            const SizedBox(width: 8),
+                            Text(unit
+                                ? minTempF!.fahrenheitToCelsius()
+                                : minTempF!.celsiusToFahrenheit()),
+                            const SizedBox(width: 8)
+                          ]),
+                          const Spacer(flex: 2)
+                        ]);
+                      },
+                      separatorBuilder: (context, index) => const Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8.0),
+                          child: Divider(thickness: 0.5)))
+                ])));
+  }
 }
