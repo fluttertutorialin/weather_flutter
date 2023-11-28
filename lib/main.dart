@@ -6,6 +6,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
+import 'presentation/cubits/bloc_providers.dart';
 import 'bloc_observer.dart';
 import 'core/constants/end_point.dart';
 import 'core/localization/localization.dart';
@@ -13,9 +14,6 @@ import 'core/log/log.dart';
 import 'core/router/router.dart';
 import 'core/theme/themes.dart';
 import 'injectable.dart';
-import 'presentation/cubits/forgot_password/forgot_password_cubit.dart';
-import 'presentation/cubits/login/login_cubit.dart';
-import 'presentation/cubits/sign_up/sign_up_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,14 +40,7 @@ void main() async {
     Bloc.observer = AppBlocObserver();
   }
 
-  runApp(MultiBlocProvider(providers: [
-    //BlocProvider(create: (_) => getIt<SettingCubit>()..unitChange(temperatureUnits: true)),
-    BlocProvider(create: (_) => getIt<LoginCubit>()),
-    BlocProvider(create: (_) => getIt<SignUpCubit>()),
-    BlocProvider(create: (_) => getIt<ForgotPasswordCubit>()),
-
-    //BlocProvider(create: (_) => getIt<SplashCubit>()..isAuthenticatedUserCheck()),
-  ], child: const MyApp()));
+  runApp(MultiBlocProvider(providers: getProviders(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -88,3 +79,4 @@ class MyApp extends StatelessWidget {
             }));
   }
 }
+
