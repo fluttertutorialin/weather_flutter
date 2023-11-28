@@ -301,7 +301,8 @@ class ExtendedTheme extends ThemeExtension<ExtendedTheme> {
     borderRadius: 8,
     appBarBackgroundImage: 'assets/background-dark.png',
     appBarBackgroundImageForRoom: 'assets/background-team-dark.png',
-    appBarBackgroundImageForCreativeIsland: 'assets/background-creative-island-dark.webp',
+    appBarBackgroundImageForCreativeIsland:
+        'assets/background-creative-island-dark.webp',
     appBarBackgroundImageDiscovery: 'assets/background-discovery-dark.webp',
     chatRoomBackground: Color.fromARGB(255, 53, 53, 53),
     chatRoomReplyBackground: Color.fromARGB(255, 22, 22, 22),
@@ -411,25 +412,38 @@ class ExtendedTheme extends ThemeExtension<ExtendedTheme> {
   }) {
     return ExtendedTheme(
       borderRadius: borderRadius ?? this.borderRadius,
-      appBarBackgroundImage: appBarBackgroundImage ?? this.appBarBackgroundImage,
-      appBarBackgroundImageForRoom: appBarBackgroundImageForRoom ?? this.appBarBackgroundImageForRoom,
-      appBarBackgroundImageForCreativeIsland: appBarBackgroundImageForCreativeIsland ?? this.appBarBackgroundImageForCreativeIsland,
-      appBarBackgroundImageDiscovery: appBarBackgroundImageDiscovery ?? this.appBarBackgroundImageDiscovery,
+      appBarBackgroundImage:
+          appBarBackgroundImage ?? this.appBarBackgroundImage,
+      appBarBackgroundImageForRoom:
+          appBarBackgroundImageForRoom ?? this.appBarBackgroundImageForRoom,
+      appBarBackgroundImageForCreativeIsland:
+          appBarBackgroundImageForCreativeIsland ??
+              this.appBarBackgroundImageForCreativeIsland,
+      appBarBackgroundImageDiscovery:
+          appBarBackgroundImageDiscovery ?? this.appBarBackgroundImageDiscovery,
       chatRoomBackground: chatRoomBackground ?? this.chatRoomBackground,
-      chatRoomReplyBackground: chatRoomReplyBackground ?? this.chatRoomReplyBackground,
-      chatRoomReplyBackgroundSecondary: chatRoomReplyBackgroundSecondary ?? this.chatRoomReplyBackgroundSecondary,
+      chatRoomReplyBackground:
+          chatRoomReplyBackground ?? this.chatRoomReplyBackground,
+      chatRoomReplyBackgroundSecondary: chatRoomReplyBackgroundSecondary ??
+          this.chatRoomReplyBackgroundSecondary,
       chatRoomReplyText: chatRoomReplyText ?? this.chatRoomReplyText,
-      chatRoomSenderBackground: chatRoomSenderBackground ?? this.chatRoomSenderBackground,
-      chatRoomSenderBackgroundSecondary: chatRoomSenderBackgroundSecondary ?? this.chatRoomSenderBackgroundSecondary,
+      chatRoomSenderBackground:
+          chatRoomSenderBackground ?? this.chatRoomSenderBackground,
+      chatRoomSenderBackgroundSecondary: chatRoomSenderBackgroundSecondary ??
+          this.chatRoomSenderBackgroundSecondary,
       chatRoomSenderText: chatRoomSenderText ?? this.chatRoomSenderText,
       tagsBackground: tagsBackground ?? this.tagsBackground,
       tagsBackgroundHover: tagsBackgroundHover ?? this.tagsBackgroundHover,
       tagsText: tagsText ?? this.tagsText,
-      chatInputPanelBackground: chatInputPanelBackground ?? this.chatInputPanelBackground,
+      chatInputPanelBackground:
+          chatInputPanelBackground ?? this.chatInputPanelBackground,
       chatInputPanelText: chatInputPanelText ?? this.chatInputPanelText,
-      chatInputAreaBackground: chatInputAreaBackground ?? this.chatInputAreaBackground,
-      chatExampleItemBackground: chatExampleItemBackground ?? this.chatExampleItemBackground,
-      chatExampleItemBackgroundHover: chatExampleItemBackgroundHover ?? this.chatExampleItemBackgroundHover,
+      chatInputAreaBackground:
+          chatInputAreaBackground ?? this.chatInputAreaBackground,
+      chatExampleItemBackground:
+          chatExampleItemBackground ?? this.chatExampleItemBackground,
+      chatExampleItemBackgroundHover:
+          chatExampleItemBackgroundHover ?? this.chatExampleItemBackgroundHover,
       chatExampleItemText: chatExampleItemText ?? this.chatExampleItemText,
       chatExampleTitleText: chatExampleTitleText ?? this.chatExampleTitleText,
       markdownLinkColor: markdownLinkColor ?? this.markdownLinkColor,
@@ -437,156 +451,196 @@ class ExtendedTheme extends ThemeExtension<ExtendedTheme> {
       markdownCodeColor: markdownCodeColor ?? this.markdownCodeColor,
       boxShadowColor: boxShadowColor ?? this.boxShadowColor,
       backgroundColor: backgroundColor ?? this.backgroundColor,
-      backgroundInvertedColor: backgroundInvertedColor ?? this.backgroundInvertedColor,
-      backgroundContainerColor: backgroundContainerColor ?? this.backgroundContainerColor,
+      backgroundInvertedColor:
+          backgroundInvertedColor ?? this.backgroundInvertedColor,
+      backgroundContainerColor:
+          backgroundContainerColor ?? this.backgroundContainerColor,
       textFieldBorderColor: textFieldBorderColor ?? this.textFieldBorderColor,
       iconButtonColor: iconButtonColor ?? this.iconButtonColor,
       linkColor: linkColor ?? this.linkColor,
       weakLinkColor: weakLinkColor ?? this.weakLinkColor,
       weakTextColor: weakTextColor ?? this.weakTextColor,
       weakTextColorPlus: weakTextColorPlus ?? this.weakTextColorPlus,
-      weakTextColorPlusPlus: weakTextColorPlusPlus ?? this.weakTextColorPlusPlus,
-      dialogDefaultTextColor: dialogDefaultTextColor ?? this.dialogDefaultTextColor,
-      dialogBackgroundColor: dialogBackgroundColor ?? this.dialogBackgroundColor,
-      columnBlockBorderColor: columnBlockBorderColor ?? this.columnBlockBorderColor,
-      columnBlockBackgroundColor: columnBlockBackgroundColor ?? this.columnBlockBackgroundColor,
-      columnBlockDividerColor: columnBlockDividerColor ?? this.columnBlockDividerColor,
+      weakTextColorPlusPlus:
+          weakTextColorPlusPlus ?? this.weakTextColorPlusPlus,
+      dialogDefaultTextColor:
+          dialogDefaultTextColor ?? this.dialogDefaultTextColor,
+      dialogBackgroundColor:
+          dialogBackgroundColor ?? this.dialogBackgroundColor,
+      columnBlockBorderColor:
+          columnBlockBorderColor ?? this.columnBlockBorderColor,
+      columnBlockBackgroundColor:
+          columnBlockBackgroundColor ?? this.columnBlockBackgroundColor,
+      columnBlockDividerColor:
+          columnBlockDividerColor ?? this.columnBlockDividerColor,
       textfieldHintColor: textfieldHintColor ?? this.textfieldHintColor,
-      textfieldHintDeepColor: textfieldHintDeepColor ?? this.textfieldHintDeepColor,
+      textfieldHintDeepColor:
+          textfieldHintDeepColor ?? this.textfieldHintDeepColor,
       textfieldLabelColor: textfieldLabelColor ?? this.textfieldLabelColor,
       textfieldValueColor: textfieldValueColor ?? this.textfieldValueColor,
-      textfieldBackgroundColor: textfieldBackgroundColor ?? this.textfieldBackgroundColor,
-      textfieldSelectorColor: textfieldSelectorColor ?? this.textfieldSelectorColor,
-      paymentItemBorderColor: paymentItemBorderColor ?? this.paymentItemBorderColor,
-      paymentItemBackgroundColor: paymentItemBackgroundColor ?? this.paymentItemBackgroundColor,
-      paymentItemTitleColor: paymentItemTitleColor ?? this.paymentItemTitleColor,
-      paymentItemPriceColor: paymentItemPriceColor ?? this.paymentItemPriceColor,
+      textfieldBackgroundColor:
+          textfieldBackgroundColor ?? this.textfieldBackgroundColor,
+      textfieldSelectorColor:
+          textfieldSelectorColor ?? this.textfieldSelectorColor,
+      paymentItemBorderColor:
+          paymentItemBorderColor ?? this.paymentItemBorderColor,
+      paymentItemBackgroundColor:
+          paymentItemBackgroundColor ?? this.paymentItemBackgroundColor,
+      paymentItemTitleColor:
+          paymentItemTitleColor ?? this.paymentItemTitleColor,
+      paymentItemPriceColor:
+          paymentItemPriceColor ?? this.paymentItemPriceColor,
       paymentItemDateColor: paymentItemDateColor ?? this.paymentItemDateColor,
-      paymentItemDescriptionColor: paymentItemDescriptionColor ?? this.paymentItemDescriptionColor,
+      paymentItemDescriptionColor:
+          paymentItemDescriptionColor ?? this.paymentItemDescriptionColor,
     );
   }
 }
 
 ThemeData lightTheme = ThemeData(
-      colorScheme: ColorScheme.fromSeed(
-          brightness: Brightness.light,
-          primary: const Color(0xFFFA4F26),
-          onPrimary: const Color(0xFFFFFFFF),
-          primaryContainer: const Color(0xFFFFDADA),
-          onPrimaryContainer: const Color(0xFFFA4F26),
+    colorScheme: ColorScheme.fromSeed(
+        brightness: Brightness.light,
+        primary: const Color(0xFFFA4F26),
+        onPrimary: const Color(0xFFFFFFFF),
+        primaryContainer: const Color(0xFFFFDADA),
+        onPrimaryContainer: const Color(0xFFFA4F26),
+        secondary: const Color(0xFF000000),
+        onSecondary: const Color(0xFFFFFFFF),
+        secondaryContainer: const Color(0xFFFFDADA),
+        onSecondaryContainer: const Color(0xFFFA4F26),
+        tertiary: const Color(0xFF000000),
+        onTertiary: const Color(0xFFFFFFFF),
+        tertiaryContainer: const Color(0xFFFFDDB2),
+        onTertiaryContainer: const Color(0xFFFA4F26),
+        error: const Color(0xFFBA1A1A),
+        errorContainer: const Color(0xFFFFDAD6),
+        onError: const Color(0xFFFFFFFF),
+        onErrorContainer: const Color(0xFFD6D6D6),
+        background: const Color(0xFFFFFFFF),
+        onBackground: const Color(0xFF201A1A),
+        surface: const Color(0xFFFBEEED),
+        onSurface: const Color(0xFF201A1A),
+        surfaceVariant: const Color(0xFFF4DDDD),
+        onSurfaceVariant: const Color(0xFF000000),
+        outline: const Color(0xFF000000),
+        inverseSurface: const Color(0xFF362F2F),
+        inversePrimary: const Color(0xFFFFB3B6),
+        onInverseSurface: const Color(0xFFFBEEED),
+        shadow: const Color(0xFF000000),
+        surfaceTint: Colors.transparent,
+        //const Color(0xFFDD2C00), ///CARD COLOR
+        outlineVariant: const Color(0xFF8C9DA8).withOpacity(0.2),
 
-          secondary: const Color(0xFF000000),
-          onSecondary: const Color(0xFFFFFFFF),
-          secondaryContainer: const Color(0xFFFFDADA),
-          onSecondaryContainer: const Color(0xFFFA4F26),
+        ///DIVIDER COLOR
+        scrim: const Color(0xFF000000),
+        seedColor: const Color(0xFFB62320)),
 
-          tertiary: const Color(0xFF000000),
-          onTertiary: const Color(0xFFFFFFFF),
-          tertiaryContainer: const Color(0xFFFFDDB2),
-          onTertiaryContainer: const Color(0xFFFA4F26),
-
-          error: const Color(0xFFBA1A1A),
-          errorContainer: const Color(0xFFFFDAD6),
-          onError: const Color(0xFFFFFFFF),
-          onErrorContainer: const Color(0xFFD6D6D6),
-
-          background: const Color(0xFFFFFFFF),
-          onBackground: const Color(0xFF201A1A),
-
-          surface: const Color(0xFFFBEEED),
-          onSurface: const Color(0xFF201A1A),
-          surfaceVariant: const Color(0xFFF4DDDD),
-          onSurfaceVariant: const Color(0xFF000000),
-
-          outline: const Color(0xFF000000),
-
-          inverseSurface: const Color(0xFF362F2F),
-          inversePrimary: const Color(0xFFFFB3B6),
-          onInverseSurface: const Color(0xFFFBEEED),
-
-          shadow: const Color(0xFF000000),
-          surfaceTint: Colors.transparent,
-          //const Color(0xFFDD2C00), ///CARD COLOR
-          outlineVariant: const Color(0xFF8C9DA8).withOpacity(0.2),
-
-          ///DIVIDER COLOR
-          scrim: const Color(0xFF000000),
-          seedColor: const Color(0xFFB62320)),
-
-     /* appBarTheme: const AppBarTheme(
+    /* appBarTheme: const AppBarTheme(
           // backgroundColor: Color.fromARGB(255, 250, 250, 250),
           backgroundColor: Colors.transparent,
           scrolledUnderElevation: 0),*/
-      dividerColor: Colors.transparent,
-      dialogBackgroundColor: Colors.white,
-      dialogTheme: DialogTheme(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          elevation: 0),
-
-      snackBarTheme: const SnackBarThemeData(backgroundColor: Color(0xFFF4DDDD)),
-      textTheme: TextTheme(
-          displaySmall: TextStyleConstant.displaySmallLightTextStyle,
-          displayMedium: TextStyleConstant.displayMediumLightTextStyle,
-          displayLarge: TextStyleConstant.displayLargeLightTextStyle,
-
-          headlineSmall: TextStyleConstant.headlineSmallLightTextStyle,
-          headlineMedium: TextStyleConstant.headlineMediumLightTextStyle,
-          headlineLarge: TextStyleConstant.headlineLargeLightTextStyle,
-
-          titleSmall: TextStyleConstant.titleSmallLightTextStyle,
-          titleMedium: TextStyleConstant.titleMediumLightTextStyle,
-          titleLarge: TextStyleConstant.titleLargeLightTextStyle,
-
-          bodySmall: TextStyleConstant.bodySmallLightTextStyle,
-          bodyMedium: TextStyleConstant.bodyMediumLightTextStyle,
-          bodyLarge: TextStyleConstant.bodyLargeLightTextStyle,
-
-          labelSmall: TextStyleConstant.labelSmallLightTextStyle,
-          labelMedium: TextStyleConstant.labelMediumLightTextStyle,
-          labelLarge: TextStyleConstant.labelLargeLightTextStyle),
-
-      navigationBarTheme: NavigationBarThemeData(
-          labelTextStyle: MaterialStateProperty.all(const TextStyle(fontSize: 13.0))),
-
-      inputDecorationTheme: InputDecorationTheme(
-          labelStyle: TextStyleConstant.labelMediumLightTextStyle,
-          floatingLabelStyle: TextStyleConstant.titleSmallLightTextStyle,
-          isDense: true,
-          contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
-          border: OutlineInputBorder(
-              borderRadius: PropertyConstant.textFieldBorderRadius,
-              borderSide: const BorderSide(color: ColorConstant.inputBorderLightColor)),
-          enabledBorder: OutlineInputBorder(
-              borderRadius: PropertyConstant.textFieldBorderRadius,
-              borderSide: const BorderSide(color: ColorConstant.inputEnabledBorderLightColor)),
-          errorStyle: TextStyleConstant.errorTextFieldTheme,
-          errorMaxLines: 1,
-          errorBorder: OutlineInputBorder(
-              borderRadius: PropertyConstant.textFieldBorderRadius,
-              borderSide: const BorderSide(color: Color(0xFFFA4F26))),
-          focusedErrorBorder: OutlineInputBorder(
-              borderRadius: PropertyConstant.textFieldBorderRadius,
-              borderSide: const BorderSide(color: Color(0xFFFA4F26))),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: PropertyConstant.textFieldBorderRadius,
-              borderSide: const BorderSide(color: Color(0xFFFA4F26)))),
-
-      textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom()));
+    dividerColor: Colors.transparent,
+    //iconTheme: IconThemeData( ),
+    //primaryIconTheme: IconThemeData(),
+    switchTheme: SwitchThemeData(
+        trackOutlineColor: trackOutlineColor,
+        thumbColor: MaterialStateProperty.resolveWith(getColorPrimary),
+        trackColor: MaterialStateProperty.resolveWith(getColorSecondary),
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        splashRadius: 1),
+    dialogBackgroundColor: Colors.white,
+    dialogTheme: DialogTheme(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        elevation: 0),
+    snackBarTheme: const SnackBarThemeData(backgroundColor: Color(0xFFF4DDDD)),
+    textTheme: TextTheme(
+        displaySmall: TextStyleConstant.displaySmallLightTextStyle,
+        displayMedium: TextStyleConstant.displayMediumLightTextStyle,
+        displayLarge: TextStyleConstant.displayLargeLightTextStyle,
+        headlineSmall: TextStyleConstant.headlineSmallLightTextStyle,
+        headlineMedium: TextStyleConstant.headlineMediumLightTextStyle,
+        headlineLarge: TextStyleConstant.headlineLargeLightTextStyle,
+        titleSmall: TextStyleConstant.titleSmallLightTextStyle,
+        titleMedium: TextStyleConstant.titleMediumLightTextStyle,
+        titleLarge: TextStyleConstant.titleLargeLightTextStyle,
+        bodySmall: TextStyleConstant.bodySmallLightTextStyle,
+        bodyMedium: TextStyleConstant.bodyMediumLightTextStyle,
+        bodyLarge: TextStyleConstant.bodyLargeLightTextStyle,
+        labelSmall: TextStyleConstant.labelSmallLightTextStyle,
+        labelMedium: TextStyleConstant.labelMediumLightTextStyle,
+        labelLarge: TextStyleConstant.labelLargeLightTextStyle),
+    navigationBarTheme: NavigationBarThemeData(
+        labelTextStyle:
+            MaterialStateProperty.all(const TextStyle(fontSize: 13.0))),
+    inputDecorationTheme: InputDecorationTheme(
+        labelStyle: TextStyleConstant.labelMediumLightTextStyle,
+        floatingLabelStyle: TextStyleConstant.titleSmallLightTextStyle,
+        isDense: true,
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
+        border: OutlineInputBorder(
+            borderRadius: PropertyConstant.textFieldBorderRadius,
+            borderSide:
+                const BorderSide(color: ColorConstant.inputBorderLightColor)),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: PropertyConstant.textFieldBorderRadius,
+            borderSide: const BorderSide(
+                color: ColorConstant.inputEnabledBorderLightColor)),
+        errorStyle: TextStyleConstant.errorTextFieldTheme,
+        errorMaxLines: 1,
+        errorBorder: OutlineInputBorder(
+            borderRadius: PropertyConstant.textFieldBorderRadius,
+            borderSide: const BorderSide(color: Color(0xFFFA4F26))),
+        focusedErrorBorder: OutlineInputBorder(
+            borderRadius: PropertyConstant.textFieldBorderRadius,
+            borderSide: const BorderSide(color: Color(0xFFFA4F26))),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: PropertyConstant.textFieldBorderRadius,
+            borderSide: const BorderSide(color: Color(0xFFFA4F26)))),
+    textButtonTheme: TextButtonThemeData(style: TextButton.styleFrom()));
 
 ThemeData darkTheme = ThemeData(
-      appBarTheme: const AppBarTheme(
-          // backgroundColor: Color.fromARGB(255, 48, 48, 48),
-          backgroundColor: Colors.transparent,
-          scrolledUnderElevation: 0),
-      dividerColor: Colors.transparent,
-      dialogBackgroundColor: const Color.fromARGB(255, 48, 48, 48),
-      dialogTheme: DialogTheme(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-          elevation: 0),
-      textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-              foregroundColor: const Color.fromARGB(255, 9, 185, 85))));
+    appBarTheme: const AppBarTheme(
+        // backgroundColor: Color.fromARGB(255, 48, 48, 48),
+        backgroundColor: Colors.transparent,
+        scrolledUnderElevation: 0),
+    dividerColor: Colors.transparent,
+    dialogBackgroundColor: const Color.fromARGB(255, 48, 48, 48),
+    dialogTheme: DialogTheme(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        elevation: 0),
+    textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+            foregroundColor: const Color.fromARGB(255, 9, 185, 85))));
 
+MaterialStateProperty<Color?> get trackOutlineColor {
+  return MaterialStateProperty.resolveWith((Set<MaterialState> states) {
+    if (states.contains(MaterialState.selected)) {
+      return null;
+    }
+    if (states.contains(MaterialState.disabled)) {
+      return Colors.transparent;
+    }
+    return const Color(0xFFFA4F26);
+  });
+}
+
+Color getColorPrimary(Set<MaterialState> states) {
+  const Set<MaterialState> activeStates = <MaterialState>{
+    MaterialState.selected
+  };
+  if (states.any(activeStates.contains)) {
+    return const Color(0x0FFFFFFF);
+  }
+  return const Color(0xFFFA4F26);
+}
+
+Color getColorSecondary(Set<MaterialState> states) {
+  const Set<MaterialState> activeStates = <MaterialState>{
+    MaterialState.selected
+  };
+  if (states.any(activeStates.contains)) {
+    return const Color(0xFFFA4F26);
+  }
+  return Colors.transparent;
+}

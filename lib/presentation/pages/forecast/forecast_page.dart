@@ -42,6 +42,7 @@ class _ForecastState extends State<ForecastPage> {
               });
             }, builder: (context, state) {
               return Switch.adaptive(
+
                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                   value: isFahrenheitUnit!,
                   onChanged: (bool value) {
