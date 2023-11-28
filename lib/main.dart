@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_storage/get_storage.dart';
 import 'core/enum/theme_enum.dart';
 import 'presentation/cubits/theme/theme_cubit.dart';
+import 'presentation/cubits/theme/theme_state.dart';
 import 'presentation/cubits/bloc_providers.dart';
 import 'core/state_manager/bloc_observer.dart';
 import 'core/constants/end_point.dart';
@@ -16,7 +17,6 @@ import 'core/log/log.dart';
 import 'core/router/router.dart';
 import 'core/theme/themes.dart';
 import 'injectable.dart';
-import 'presentation/cubits/theme/theme_state.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
