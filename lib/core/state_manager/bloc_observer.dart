@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'core/log/log.dart';
-import 'core/state_manager/app_cubit_observer.dart';
+import '../log/log.dart';
+import 'app_cubit_observer.dart';
 
 //BlocObserver, AppCubitObserver, CubitObserver
 class AppBlocObserver extends AppCubitObserver {

@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import '../../../core/enum/theme_enum.dart';
 import '../../../core/extensions/extensions.dart';
 import '../../../domain/entities/forecast/forecast_entity.dart';
 import '../../cubits/forecast/forecast_cubits.dart';
 import '../../cubits/setting/setting_cubits.dart';
+import '../../cubits/theme/theme_cubit.dart';
 import '../../widgets/widget/indicator_adaptive_widget.dart';
 
 class ForecastPage extends StatefulWidget {
@@ -41,11 +43,14 @@ class _ForecastState extends State<ForecastPage> {
             }, builder: (context, state) {
               return Switch.adaptive(
                   value: isFahrenheitUnit!,
-                  activeColor: context.primaryColor,
                   onChanged: (bool value) {
                     context
                         .read<SettingCubit>()
                         .unitChange(temperatureUnits: value);
+
+                    context
+                        .read<ThemeCubit>()
+                        .themeChange(themeEnum: ThemeEnum.Light);
                   });
             })
           ]),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../localization/generated/strings.dart';
 import '../theme/color.dart';
+import '../theme/theme.dart';
 
 extension ContextExtensions on BuildContext {
   TextTheme get _textThemeContext => Theme.of(this).textTheme;
@@ -32,6 +33,8 @@ extension ContextExtensions on BuildContext {
 
   ///COLOR
   ThemeData get _theme => Theme.of(this);
+  ExtendedTheme get extendedTheme => _theme.extension<ExtendedTheme>()!;
+
   Color get primaryColor => _theme.colorScheme.primary;
 
   Strings get l10n => Strings.of(this)!;

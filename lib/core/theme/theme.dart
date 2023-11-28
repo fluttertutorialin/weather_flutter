@@ -6,8 +6,9 @@ import '../constants/constants.dart';
 import 'color.dart';
 import 'text_style.dart';
 
-class CustomColors extends ThemeExtension<CustomColors> {
-  const CustomColors({
+@immutable
+class ExtendedTheme extends ThemeExtension<ExtendedTheme> {
+  const ExtendedTheme({
     this.borderRadius,
     this.appBarBackgroundImage,
     this.appBarBackgroundImageForRoom,
@@ -131,15 +132,15 @@ class CustomColors extends ThemeExtension<CustomColors> {
   final Color? paymentItemDescriptionColor;
 
   @override
-  ThemeExtension<CustomColors> lerp(
-    covariant ThemeExtension<CustomColors>? other,
+  ThemeExtension<ExtendedTheme> lerp(
+    covariant ThemeExtension<ExtendedTheme>? other,
     double t,
   ) {
-    if (other is! CustomColors) {
+    if (other is! ExtendedTheme) {
       return this;
     }
 
-    return CustomColors(
+    return ExtendedTheme(
       borderRadius: lerpDouble(borderRadius, other.borderRadius, t),
       appBarBackgroundImage: appBarBackgroundImage,
       appBarBackgroundImageForRoom: appBarBackgroundImageForRoom,
@@ -239,7 +240,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
     );
   }
 
-  static const light = CustomColors(
+  static const light = ExtendedTheme(
     borderRadius: 8,
     appBarBackgroundImage: 'assets/background.png',
     appBarBackgroundImageForRoom: 'assets/background-team.png',
@@ -296,12 +297,11 @@ class CustomColors extends ThemeExtension<CustomColors> {
     paymentItemDescriptionColor: Color.fromARGB(255, 117, 117, 117),
   );
 
-  static const dark = CustomColors(
+  static const dark = ExtendedTheme(
     borderRadius: 8,
     appBarBackgroundImage: 'assets/background-dark.png',
     appBarBackgroundImageForRoom: 'assets/background-team-dark.png',
-    appBarBackgroundImageForCreativeIsland:
-        'assets/background-creative-island-dark.webp',
+    appBarBackgroundImageForCreativeIsland: 'assets/background-creative-island-dark.webp',
     appBarBackgroundImageDiscovery: 'assets/background-discovery-dark.webp',
     chatRoomBackground: Color.fromARGB(255, 53, 53, 53),
     chatRoomReplyBackground: Color.fromARGB(255, 22, 22, 22),
@@ -354,7 +354,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
   );
 
   @override
-  ThemeExtension<CustomColors> copyWith({
+  ThemeExtension<ExtendedTheme> copyWith({
     double? borderRadius,
     String? appBarBackgroundImage,
     String? appBarBackgroundImageForRoom,
@@ -409,27 +409,18 @@ class CustomColors extends ThemeExtension<CustomColors> {
     Color? paymentItemDateColor,
     Color? paymentItemDescriptionColor,
   }) {
-    return CustomColors(
+    return ExtendedTheme(
       borderRadius: borderRadius ?? this.borderRadius,
-      appBarBackgroundImage:
-          appBarBackgroundImage ?? this.appBarBackgroundImage,
-      appBarBackgroundImageForRoom:
-          appBarBackgroundImageForRoom ?? this.appBarBackgroundImageForRoom,
-      appBarBackgroundImageForCreativeIsland:
-          appBarBackgroundImageForCreativeIsland ??
-              this.appBarBackgroundImageForCreativeIsland,
-      appBarBackgroundImageDiscovery:
-          appBarBackgroundImageDiscovery ?? this.appBarBackgroundImageDiscovery,
+      appBarBackgroundImage: appBarBackgroundImage ?? this.appBarBackgroundImage,
+      appBarBackgroundImageForRoom: appBarBackgroundImageForRoom ?? this.appBarBackgroundImageForRoom,
+      appBarBackgroundImageForCreativeIsland: appBarBackgroundImageForCreativeIsland ?? this.appBarBackgroundImageForCreativeIsland,
+      appBarBackgroundImageDiscovery: appBarBackgroundImageDiscovery ?? this.appBarBackgroundImageDiscovery,
       chatRoomBackground: chatRoomBackground ?? this.chatRoomBackground,
-      chatRoomReplyBackground:
-          chatRoomReplyBackground ?? this.chatRoomReplyBackground,
-      chatRoomReplyBackgroundSecondary: chatRoomReplyBackgroundSecondary ??
-          this.chatRoomReplyBackgroundSecondary,
+      chatRoomReplyBackground: chatRoomReplyBackground ?? this.chatRoomReplyBackground,
+      chatRoomReplyBackgroundSecondary: chatRoomReplyBackgroundSecondary ?? this.chatRoomReplyBackgroundSecondary,
       chatRoomReplyText: chatRoomReplyText ?? this.chatRoomReplyText,
-      chatRoomSenderBackground:
-          chatRoomSenderBackground ?? this.chatRoomSenderBackground,
-      chatRoomSenderBackgroundSecondary: chatRoomSenderBackgroundSecondary ??
-          this.chatRoomSenderBackgroundSecondary,
+      chatRoomSenderBackground: chatRoomSenderBackground ?? this.chatRoomSenderBackground,
+      chatRoomSenderBackgroundSecondary: chatRoomSenderBackgroundSecondary ?? this.chatRoomSenderBackgroundSecondary,
       chatRoomSenderText: chatRoomSenderText ?? this.chatRoomSenderText,
       tagsBackground: tagsBackground ?? this.tagsBackground,
       tagsBackgroundHover: tagsBackgroundHover ?? this.tagsBackgroundHover,
@@ -476,10 +467,7 @@ class CustomColors extends ThemeExtension<CustomColors> {
   }
 }
 
-ThemeData createLightThemeData() {
-  return ThemeData.light().copyWith(
-      extensions: [CustomColors.light],
-
+ThemeData lightTheme = ThemeData(
       colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.light,
           primary: const Color(0xFFFA4F26),
@@ -586,12 +574,8 @@ ThemeData createLightThemeData() {
 
       textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom()));
-}
 
-ThemeData createDarkThemeData() {
-  return ThemeData.dark().copyWith(
-      extensions: [CustomColors.dark],
-
+ThemeData darkTheme = ThemeData(
       appBarTheme: const AppBarTheme(
           // backgroundColor: Color.fromARGB(255, 48, 48, 48),
           backgroundColor: Colors.transparent,
@@ -605,4 +589,4 @@ ThemeData createDarkThemeData() {
       textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
               foregroundColor: const Color.fromARGB(255, 9, 185, 85))));
-}
+
