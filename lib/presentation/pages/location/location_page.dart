@@ -5,7 +5,6 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/constants/icon.dart';
-import '../../../core/constants/property.dart';
 import '../../../core/extensions/context_extension.dart';
 import '../../../core/router/router_path.dart';
 import '../../../domain/entities/location_entity.dart';
@@ -100,7 +99,6 @@ class _LocationState extends State<LocationPage> {
             onTap: () {
               searchController.clear();
               context.goNamed(RoutesName.forecast.path, extra: locationEntity);
-              PropertyConstant.keyboardHide();
             },
             leading: CircleAvatar(child: Text(country![0])),
             title: Text(name!, style: context.displayMediumStyle),

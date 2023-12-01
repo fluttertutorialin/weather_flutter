@@ -5,8 +5,8 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.0 <4.0.0'
-  flutter: 3.16.0
+  sdk: '>=3.2.2 <4.0.0'
+  flutter: 3.16.2
 
 dependencies:
   flutter:
@@ -52,7 +52,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   injectable_generator: ^2.4.1
-  build_runner: 2.4.6
+  build_runner: 2.4.7
   json_serializable: ^6.7.1
   freezed: ^2.4.5
 

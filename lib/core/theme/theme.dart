@@ -542,6 +542,19 @@ ThemeData lightTheme = ThemeData(
     dividerColor: Colors.transparent,
     //iconTheme: IconThemeData( ),
     //primaryIconTheme: IconThemeData(),
+    checkboxTheme: CheckboxThemeData(
+        splashRadius: 0,
+        side: MaterialStateBorderSide.resolveWith(
+            (_) => const BorderSide(width: 2, color: Color(0xFFFA4F26))),
+        fillColor:
+            MaterialStateProperty.resolveWith((Set<MaterialState> states) {
+          if (states.contains(MaterialState.selected)) {
+            return const Color(0xFFFA4F26);
+          }
+          return Colors.transparent;
+        }),
+        checkColor: MaterialStateProperty.all(Colors.white),
+        overlayColor: MaterialStateProperty.all(Colors.white)),
     switchTheme: SwitchThemeData(
         trackOutlineColor: trackOutlineColor,
         thumbColor: MaterialStateProperty.resolveWith(getColorPrimary),

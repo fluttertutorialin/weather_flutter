@@ -5,9 +5,7 @@ part 'forecast_state.freezed.dart';
 
 @freezed
 class ForecastState with _$ForecastState {
-  const factory ForecastState({
-    @Default(false) bool loading,
-    required ForecastEntity forecastEntity,
-    @Default('') String error,
+  const factory ForecastState({@Default(false) bool loading,
+    required ForecastEntity forecastEntity, @Default('') String error,
   }) = _ForecastState;
 }
