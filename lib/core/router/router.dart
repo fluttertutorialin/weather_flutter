@@ -5,7 +5,9 @@ import '../../domain/entities/entities.dart';
 import '../../injectable.dart';
 import '../../presentation/cubits/forecast/forecast_cubit.dart';
 import '../../presentation/cubits/location/location_cubit.dart';
+import '../../presentation/cubits/login/login_cubit.dart';
 import '../../presentation/cubits/setting/setting_cubit.dart';
+import '../../presentation/cubits/sign_up/sign_up_cubit.dart';
 import 'router_path.dart';
 
 import '../../presentation/pages/pages.dart';
@@ -37,16 +39,15 @@ final goRouter = GoRouter(
       GoRoute(
           name: RoutesName.login.name,
           path: RoutesName.login.path,
-          builder: (BuildContext context, GoRouterState state) {
-            return LoginPage();
-          },
+          builder: (context, state) => BlocProvider(
+              create: (_) => getIt<LoginCubit>(), child: LoginPage()),
           routes: <RouteBase>[
             GoRoute(
                 name: RoutesName.signUp.name,
                 path: RoutesName.signUp.path,
-                builder: (BuildContext context, GoRouterState state) {
-                  return const SignUpPage();
-                }),
+                builder: (context, state) => BlocProvider(
+                    create: (_) => getIt<SignUpCubit>(),
+                    child: const SignUpPage())),
             GoRoute(
                 name: RoutesName.forgotPassword.name,
                 path: RoutesName.forgotPassword.path,
