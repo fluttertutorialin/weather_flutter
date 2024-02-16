@@ -32,5 +32,8 @@
         <meta-data
             android:name="io.flutter.embedding.android.EnableImpeller"
             android:value="true" />
+        <meta-data
+            android:name="io.flutter.embedding.android.EnableOpenGLGPUTracing"
+            android:value="true" />
     </application>
 </manifest>
