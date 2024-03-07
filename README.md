@@ -47,3 +47,13 @@ const factory ServerFailure.serverError({T? msg}) = ServerError;
 const factory ServerFailure.apiFailure({T? msg}) = ApiFailure;
 }
    ```
+<p align="center">
+  <img alt="" src="screenshot\Screenshot_20240307_094934.png" width="180"/>
+  <img alt="" src="screenshot\Screenshot_20240307_094942.png" width="180"/>
+  <img alt="" src="screenshot\Screenshot_20240307_095554.png" width="180"/>
+  <img alt="" src="screenshot\Screenshot_20240307_095707.png" width="180"/>
+  <img alt="" src="screenshot\Screenshot_20240307_095723.png" width="180"/>
+  <img alt="" src="screenshot\Screenshot_20240307_095851.png" width="180"/>
+  <img alt="" src="screenshot\Screenshot_20240307_095936.png" width="180"/>
+  <img alt="" src="screenshot\Screenshot_20240307_095951.png" width="180"/>
+</p>
