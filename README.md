@@ -54,4 +54,5 @@ const factory ServerFailure.apiFailure({T? msg}) = ApiFailure;
   <img alt="" src="screenshot\4.png" width="180"/>
   <img alt="" src="screenshot\5.png" width="180"/>
   <img alt="" src="screenshot\6.png" width="180"/>
+  <img alt="" src="screenshot\7.png" width="180"/>
 </p>
