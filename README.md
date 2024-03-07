@@ -47,12 +47,3 @@ const factory ServerFailure.serverError({T? msg}) = ServerError;
 const factory ServerFailure.apiFailure({T? msg}) = ApiFailure;
 }
    ```
-<p align="center">
-  <img alt="" src="screenshot\1.png" width="180"/>
-  <img alt="" src="screenshot\2.png" width="180"/>
-  <img alt="" src="screenshot\3.png" width="180"/>
-  <img alt="" src="screenshot\4.png" width="180"/>
-  <img alt="" src="screenshot\5.png" width="180"/>
-  <img alt="" src="screenshot\6.png" width="180"/>
-  <img alt="" src="screenshot\7.png" width="180"/>
-</p>
