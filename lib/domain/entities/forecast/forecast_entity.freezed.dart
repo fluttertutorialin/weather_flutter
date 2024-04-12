@@ -12,7 +12,7 @@ part of 'forecast_entity.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ForecastEntity {
@@ -191,7 +191,7 @@ class _$ForecastEntityImpl extends _ForecastEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ForecastEntityImpl &&
@@ -443,7 +443,7 @@ class _$LocationForecastEntityImpl extends _LocationForecastEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LocationForecastEntityImpl &&
@@ -651,7 +651,7 @@ class _$CurrentForecastEntityImpl extends _CurrentForecastEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CurrentForecastEntityImpl &&
@@ -801,7 +801,7 @@ class _$ConditionForecastEntityImpl extends _ConditionForecastEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConditionForecastEntityImpl &&
@@ -936,7 +936,7 @@ class _$ForecastSubEntityImpl extends _ForecastSubEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ForecastSubEntityImpl &&
@@ -1089,7 +1089,7 @@ class _$ForecastDayEntityImpl extends _ForecastDayEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ForecastDayEntityImpl &&
@@ -1266,7 +1266,7 @@ class _$DayEntityImpl extends _DayEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DayEntityImpl &&
