@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/constants/constants.dart';
@@ -171,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
             focusNode: _passwordFocusNode,
             labelText: context.l10n.passwordTextFieldHint,
             suffixIcon: IconButton(
-                icon: Icon(context.watch<LoginCubit>().isPasswordVisible
+                icon: Icon(loginState.isPasswordVisible
                     ? IconConstant.passwordInVisibleIcon
                     : IconConstant.passwordVisibleIcon),
                 onPressed: () {

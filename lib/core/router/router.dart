@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import '../../domain/entities/entities.dart';
 import '../../injectable.dart';
+import '../../presentation/cubits/forecast/forecast_cubit.dart';
 import '../../presentation/cubits/location/location_cubit.dart';
 import '../../presentation/cubits/login/login_cubit.dart';
+import '../../presentation/cubits/setting/setting_cubit.dart';
 import '../../presentation/cubits/sign_up/sign_up_cubit.dart';
 import 'router_path.dart';
 
@@ -58,7 +61,6 @@ final goRouter = GoRouter(
             return BottomNavBar(navigationShell);
           },
           branches: [
-            //HomePage
             StatefulShellBranch(routes: [
               GoRoute(
                   path: RoutesName.home.path,
@@ -70,18 +72,32 @@ final goRouter = GoRouter(
                         builder: (context, state) => BlocProvider(
                             create: (_) => getIt<LocationCubit>(),
                             child: const LocationPage()),
-                        routes: [])
+                        routes: [
+                          GoRoute(
+                              name: RoutesName.forecast.name,
+                              path: RoutesName.forecast.path,
+                              builder:
+                                  (BuildContext context, GoRouterState state) {
+                                final LocationEntity(:id) =
+                                    state.extra as LocationEntity;
+                                return MultiBlocProvider(providers: [
+                                  BlocProvider<ForecastCubit>(
+                                      create: (_) => getIt<ForecastCubit>()..forecastId(id: id!)),
+                                  BlocProvider<SettingCubit>(
+                                      create: (BuildContext context) =>
+                                          getIt<SettingCubit>()
+                                            ..unitChange(
+                                                temperatureUnits: true))
+                                ], child: const ForecastPage());
+                              })
+                        ])
                   ])
             ]),
-
-            //NoticePage
             StatefulShellBranch(routes: [
               GoRoute(
                   path: '/notice',
                   builder: (context, state) => const NoticePage())
             ]),
-
-            //Container()
             StatefulShellBranch(routes: [
               GoRoute(
                   path: '/setting', builder: (context, state) => Container())
