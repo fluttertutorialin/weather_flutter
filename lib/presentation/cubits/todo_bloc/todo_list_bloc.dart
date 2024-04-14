@@ -9,6 +9,15 @@ part 'todo_list_event.dart';
 part 'todo_list_state.dart';
 part 'todo_list_bloc.freezed.dart';
 
+//ACCESS
+/*
+  context.read<TodoListBloc>().add(
+            TodoListEvent.toggle(
+                id: widget.todo.id
+            ),
+          );
+*/
+
 class TodoListBloc extends Bloc<TodoListEvent, TodoListState> {
   TodoListBloc() : super(TodoListState.initial()) {
     on<TodoListEvent>((event, emit) {

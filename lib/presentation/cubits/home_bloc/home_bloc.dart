@@ -6,6 +6,10 @@ part 'home_state.dart';
 
 part 'home_bloc.freezed.dart';
 
+/*
+ACCESS: getIt<HomeBloc>()..add(const GetNotes()),
+*/
+
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(HomeState.initial()) {
     on<GetNotes>((event, emit) async {
