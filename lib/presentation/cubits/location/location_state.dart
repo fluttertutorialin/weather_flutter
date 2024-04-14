@@ -8,6 +8,5 @@ class LocationState with _$LocationState {
   const factory LocationState.initial() = _Initial;
   const factory LocationState.loading(bool isLoading) = _Loading;
   const factory LocationState.success(List<LocationEntity> locationList) = _Success;
-
   const factory LocationState.error(String error) = _Error;
 }

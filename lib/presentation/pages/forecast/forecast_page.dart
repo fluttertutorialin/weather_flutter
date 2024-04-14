@@ -66,7 +66,8 @@ class _ForecastState extends State<ForecastPage> {
                     orElse: () => false,
                   );
                 }, builder: (context, unit) {
-                  return BlocBuilder<ForecastCubit, ForecastState>(builder: (context, state) {
+                  return BlocBuilder<ForecastCubit, ForecastState>(
+                      builder: (context, state) {
                     final status = (state.loading, state.forecastEntity);
 
                     return switch (status) {
