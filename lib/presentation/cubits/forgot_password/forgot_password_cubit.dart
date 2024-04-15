@@ -1,11 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'forgot_password_cubits.dart';
 
 import '../../../core/error/error.dart';
 import '../../../domain/entities/entities.dart';
 import '../../../domain/usecases/usecases.dart';
+
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'forgot_password_state.dart';
+part 'forgot_password_cubit.freezed.dart';
 
 @injectable
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {

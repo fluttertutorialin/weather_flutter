@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/extensions/extensions.dart';
 import '../../../core/router/router_path.dart';
 import '../../../injectable.dart';
-import '../../cubits/splash/splash_cubits.dart';
+import '../../cubits/splash/splash_cubit.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

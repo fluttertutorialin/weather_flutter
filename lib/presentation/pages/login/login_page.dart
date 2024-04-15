@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/constants/constants.dart';
@@ -11,7 +10,7 @@ import '../../../core/mixins/mixins.dart';
 import '../../../core/router/router_path.dart';
 import '../../../core/theme/color.dart';
 import '../../../domain/entities/entities.dart';
-import '../../cubits/login/login_cubits.dart';
+import '../../cubits/login/login_cubit.dart';
 import '../../widgets/components/components.dart';
 import '../../../core/extensions/extensions.dart';
 

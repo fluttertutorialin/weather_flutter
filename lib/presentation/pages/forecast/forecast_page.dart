@@ -7,7 +7,7 @@ import '../../../core/enum/theme_enum.dart';
 import '../../../core/extensions/extensions.dart';
 import '../../../domain/entities/forecast/forecast_entity.dart';
 import '../../cubits/forecast/forecast_cubits.dart';
-import '../../cubits/setting/setting_cubits.dart';
+import '../../cubits/setting/setting_cubit.dart';
 import '../../cubits/theme/theme_cubit.dart';
 import '../../widgets/widget/indicator_adaptive_widget.dart';
 

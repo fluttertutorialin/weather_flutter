@@ -1,9 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'login_state.dart';
 
 import '../../../domain/entities/entities.dart';
 import '../../../domain/usecases/usecases.dart';
+
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'login_state.dart';
+part 'login_cubit.freezed.dart';
 
 @injectable
 class LoginCubit extends Cubit<LoginState> {

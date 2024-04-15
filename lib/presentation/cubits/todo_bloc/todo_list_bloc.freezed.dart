@@ -566,6 +566,8 @@ abstract class _$$RemoveTodoImplCopyWith<$Res> {
       __$$RemoveTodoImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Todo todo});
+
+  $TodoCopyWith<$Res> get todo;
 }
 
 /// @nodoc
@@ -579,14 +581,22 @@ class __$$RemoveTodoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? todo = freezed,
+    Object? todo = null,
   }) {
     return _then(_$RemoveTodoImpl(
-      todo: freezed == todo
+      todo: null == todo
           ? _value.todo
           : todo // ignore: cast_nullable_to_non_nullable
               as Todo,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TodoCopyWith<$Res> get todo {
+    return $TodoCopyWith<$Res>(_value.todo, (value) {
+      return _then(_value.copyWith(todo: value));
+    });
   }
 }
 
@@ -616,12 +626,11 @@ class _$RemoveTodoImpl with DiagnosticableTreeMixin implements _RemoveTodo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RemoveTodoImpl &&
-            const DeepCollectionEquality().equals(other.todo, todo));
+            (identical(other.todo, todo) || other.todo == todo));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(todo));
+  int get hashCode => Object.hash(runtimeType, todo);
 
   @JsonKey(ignore: true)
   @override

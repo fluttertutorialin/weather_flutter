@@ -1,7 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../../domain/entities/entities.dart';
-
-part 'forogot_password_state.freezed.dart';
+part of 'forgot_password_cubit.dart';
 
 @freezed
 class ForgotPasswordState with _$ForgotPasswordState {

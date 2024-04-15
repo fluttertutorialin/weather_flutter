@@ -1,7 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../domain/entities/entities.dart';
-part 'login_state.freezed.dart';
+part of 'login_cubit.dart';
 
 @freezed
 class LoginState with _$LoginState {

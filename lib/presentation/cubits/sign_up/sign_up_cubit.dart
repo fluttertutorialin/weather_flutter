@@ -5,7 +5,11 @@ import 'package:injectable/injectable.dart';
 import '../../../core/error/error.dart';
 import '../../../domain/entities/entities.dart';
 import '../../../domain/usecases/usecases.dart';
-import 'sign_up_cubits.dart';
+
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'sign_up_state.dart';
+part 'sign_up_cubit.freezed.dart';
 
 @injectable
 class SignUpCubit extends Cubit<SignUpState> {

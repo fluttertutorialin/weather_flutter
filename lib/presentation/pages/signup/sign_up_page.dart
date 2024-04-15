@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import '../../cubits/sign_up/sign_up_cubits.dart';
+import '../../cubits/sign_up/sign_up_cubit.dart';
 import 'sign_up_form.dart';
 
 import '../../../core/extensions/extensions.dart';

@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/constants/constants.dart';
 import '../../../core/extensions/context_extension.dart';
 import '../../../core/mixins/mixins.dart';
-import '../../cubits/sign_up/sign_up_cubits.dart';
+import '../../cubits/sign_up/sign_up_cubit.dart';
 import '../../widgets/components/components.dart';
 
 class SignUpForm extends StatefulWidget with FormValidationMixin {
