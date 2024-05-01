@@ -39,7 +39,7 @@ _$LocationForecastModelsImpl _$$LocationForecastModelsImplFromJson(
       lat: (json['lat'] as num?)?.toDouble(),
       lon: (json['lon'] as num?)?.toDouble(),
       timeZoneId: json['tz_id'] as String?,
-      localTimeEpoch: json['localtime_epoch'] as int?,
+      localTimeEpoch: (json['localtime_epoch'] as num?)?.toInt(),
       localTime: json['localtime'] as String?,
     );
 
@@ -59,7 +59,7 @@ Map<String, dynamic> _$$LocationForecastModelsImplToJson(
 _$CurrentForecastModelsImpl _$$CurrentForecastModelsImplFromJson(
         Map<String, dynamic> json) =>
     _$CurrentForecastModelsImpl(
-      lastUpdateEpoch: json['last_updated_epoch'] as int?,
+      lastUpdateEpoch: (json['last_updated_epoch'] as num?)?.toInt(),
       tempF: (json['temp_f'] as num?)?.toDouble(),
       conditionForecastModels: json['condition'] == null
           ? null

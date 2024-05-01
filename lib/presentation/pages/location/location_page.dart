@@ -71,13 +71,10 @@ class _LocationState extends State<LocationPage> {
                         child: BlocBuilder<LocationCubit, LocationState>(
                             //buildWhen: (previous, current) {},
                             builder: (_, state) => state.when(
-                                success: (List<LocationEntity> locationList) =>
-                                    _listViewBuild(locationList: locationList),
-                                error: (String error) =>
-                                    const ListViewEmptyWidget(),
+                                success: (List<LocationEntity> locationList) => _listViewBuild(locationList: locationList),
+                                error: (String error) => const ListViewEmptyWidget(),
                                 initial: () => const ListViewEmptyWidget(),
-                                loading: (bool isLoading) =>
-                                    const PlatformLoadingIndicatorWidget())))
+                                loading: (bool isLoading) => const PlatformLoadingIndicatorWidget())))
                   ])))));
 
   _listViewBuild({required List<LocationEntity> locationList}) =>

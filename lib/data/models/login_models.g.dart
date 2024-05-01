@@ -8,7 +8,7 @@ part of 'login_models.dart';
 
 _$LoginModelsImpl _$$LoginModelsImplFromJson(Map<String, dynamic> json) =>
     _$LoginModelsImpl(
-      userId: json['userId'] as int?,
+      userId: (json['userId'] as num?)?.toInt(),
       userName: json['userName'] as String?,
       mobile: json['mobile'] as String?,
     );

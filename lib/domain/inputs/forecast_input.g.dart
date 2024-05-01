@@ -9,7 +9,7 @@ part of 'forecast_input.dart';
 _$ForecastInputImpl _$$ForecastInputImplFromJson(Map<String, dynamic> json) =>
     _$ForecastInputImpl(
       id: json['q'] as String,
-      days: json['days'] as int? ?? 5,
+      days: (json['days'] as num?)?.toInt() ?? 5,
       agi: json['aqi'] as String? ?? 'no',
       alerts: json['alerts'] as String? ?? 'no',
     );
